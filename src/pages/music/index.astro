@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { artists } from "../../data/music";
+---
+
+<BaseLayout
+  title="Music"
+  description="Parallel Horizons and Extra Special Studio music."
+  path="/music"
+>
+  <h1>Music</h1>
+  <p class="lede">
+    Music is a studio pillar, not a sidebar. Parallel Horizons is the public music identity. Individual tracks are not dumped on the homepage.
+  </p>
+  <div class="grid">
+    {
+      artists.map((artist) => (
+        <a class="card project-card" href={`/music/${artist.id}`}>
+          <div class="icon-ph" aria-hidden="true">
+            PH
+          </div>
+          <div>
+            <h2>{artist.name}</h2>
+            <p>{artist.blurb}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

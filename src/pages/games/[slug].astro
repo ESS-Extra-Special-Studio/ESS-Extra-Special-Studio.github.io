@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import { games, getGame } from "../../data/games";
+
+export function getStaticPaths() {
+  return games.map((g) => ({ params: { slug: g.id } }));
+}
+
+const game = getGame(Astro.params.slug!);
+if (!game) throw new Error("Unknown game");
+---
+
+<BaseLayout title={game.name} description={game.short} path={`/games/${game.id}`}>
+  <p><a href="/games">← Games</a></p>
+  <h1>{game.name}</h1>
+  <p><span class="status">{game.status}</span>{game.engine ? ` · ${game.engine}` : ""}</p>
+  <p class="lede">{game.long}</p>
+  <ExternalLinks links={game.links} />
+</BaseLayout>

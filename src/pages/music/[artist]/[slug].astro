@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../../components/ExternalLinks.astro";
+import { artists, getRelease } from "../../../data/music";
+
+export function getStaticPaths() {
+  return artists.flatMap((a) =>
+    a.releases.map((r) => ({ params: { artist: a.id, slug: r.id } })),
+  );
+}
+
+const { artist, slug } = Astro.params;
+const release = getRelease(artist!, slug!);
+if (!release) throw new Error("Unknown release");
+const artistName = artists.find((a) => a.id === artist)?.name ?? artist;
+---
+
+<BaseLayout
+  title={`${release.title} · ${artistName}`}
+  description={`${release.kind} by ${artistName}.`}
+  path={`/music/${artist}/${slug}`}
+>
+  <p>
+    <a href={`/music/${artist}`}>← {artistName}</a>
+  </p>
+  <h1>{release.title}</h1>
+  <p class="lede">
+    {release.kind}
+    {release.year ? ` · ${release.year}` : ""}
+  </p>
+  {
+    release.tracks.length > 0 ? (
+      <ol>
+        {release.tracks.map((t) => (
+          <li>
+            {t.title}
+            {t.duration ? ` (${t.duration})` : ""}
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <p>Track listing will appear here when the release is catalogued.</p>
+    )
+  }
+  <h2 class="section-title">Listen</h2>
+  <ExternalLinks links={release.links} />
+</BaseLayout>

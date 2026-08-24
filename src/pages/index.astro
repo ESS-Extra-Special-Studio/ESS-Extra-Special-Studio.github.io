@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { studio } from "../data/studio";
+import { news } from "../data/news";
+import { featuredModIds } from "../data/featured";
+import { getMod } from "../data/mods";
+
+const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
+---
+
+<BaseLayout title="Extra Special Studio" description={studio.tagline} path="/">
+  <section class="hero">
+    <h1>{studio.tagline}</h1>
+    <p class="lede">{studio.intro}</p>
+  </section>
+
+  <section class="pillars" aria-label="Pillars">
+    <a class="card" href="/mods">
+      <h2>Mods</h2>
+      <p>Minecraft mods and the Extra Special stack. Dead Air, hub tools, utilities.</p>
+    </a>
+    <a class="card" href="/music">
+      <h2>Music</h2>
+      <p>Parallel Horizons. Albums and singles as they exist — no filler catalogues.</p>
+    </a>
+    <a class="card" href="/games">
+      <h2>Games</h2>
+      <p>DeepRealms and related Unity work. Honest status: in development or concept.</p>
+    </a>
+  </section>
+
+  <h2 class="section-title">Latest</h2>
+  <ol class="news-list">
+    {
+      news.map((item) => (
+        <li>
+          <time datetime={item.date}>{item.date}</time>
+          <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+          <p>{item.body}</p>
+        </li>
+      ))
+    }
+  </ol>
+
+  <h2 class="section-title">Featured mods</h2>
+  <div class="grid">
+    {featured.map((mod) => (mod ? <ProjectCard mod={mod} /> : null))}
+  </div>
+
+  <p style="margin-top: 2rem;">
+    <a class="btn" href="/studio">About the studio</a>
+  </p>
+</BaseLayout>

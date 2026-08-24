@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { games } from "../../data/games";
+---
+
+<BaseLayout
+  title="Games"
+  description="DeepRealms and Extra Special Studio games. Status is in development or concept unless released."
+  path="/games"
+>
+  <h1>Games</h1>
+  <p class="lede">
+    Extra Special Studio makes games as well as mods. Nothing here is marketed as a shipped store title until it actually is.
+  </p>
+  <div class="grid">
+    {
+      games.map((game) => (
+        <a class="card project-card" href={`/games/${game.id}`}>
+          <div class="icon-ph" aria-hidden="true">
+            {game.status}
+          </div>
+          <div>
+            <h2>{game.name}</h2>
+            <p>{game.short}</p>
+            <span class="status">{game.status}</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

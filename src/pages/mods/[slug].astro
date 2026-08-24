@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import { mods, getMod } from "../../data/mods";
+
+export function getStaticPaths() {
+  return mods.map((mod) => ({ params: { slug: mod.id } }));
+}
+
+const { slug } = Astro.params;
+const mod = getMod(slug!);
+if (!mod) {
+  throw new Error("Unknown mod");
+}
+---
+
+<BaseLayout title={mod.name} description={mod.short} path={`/mods/${mod.id}`}>
+  <p><a href="/mods">← Mods</a></p>
+  <header style="display:flex; gap:1rem; align-items:flex-start; margin: 1rem 0 1.5rem;">
+    {
+      mod.icon ? (
+        <img class="icon" src={mod.icon} alt="" width="64" height="64" style="width:64px;height:64px;" />
+      ) : (
+        <div class="icon-ph" style="width:64px;height:64px;" aria-hidden="true">
+          ESS
+        </div>
+      )
+    }
+    <div>
+      <h1>{mod.name}</h1>
+      <span class="status">{mod.status}</span>
+    </div>
+  </header>
+  <p class="lede">{mod.long}</p>
+  {
+    mod.stackNote && (
+      <p>
+        <strong>{mod.stackNote}</strong>
+      </p>
+    )
+  }
+  {
+    (mod.mcVersions.length > 0 || mod.loaders.length > 0) && (
+      <p>
+        {mod.loaders.join(", ")}
+        {mod.mcVersions.length ? ` · Minecraft ${mod.mcVersions.join(", ")}` : ""}
+      </p>
+    )
+  }
+  <ExternalLinks links={mod.links} />
+</BaseLayout>

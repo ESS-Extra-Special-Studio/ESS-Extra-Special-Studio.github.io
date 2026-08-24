@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://extraspecialstudio.co.uk/sitemap-index.xml

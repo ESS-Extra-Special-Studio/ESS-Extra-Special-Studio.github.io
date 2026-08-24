@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import StackDiagram from "../../components/StackDiagram.astro";
+import { ecosystemLabels, modsByEcosystem, type Ecosystem } from "../../data/mods";
+
+const order: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
+---
+
+<BaseLayout
+  title="Mods"
+  description="Extra Special Studio Minecraft mods: stack, Pantheon, Dead Air, and standalone tools."
+  path="/mods"
+>
+  <h1>Mods</h1>
+  <p class="lede">
+    Categories match how the studio actually ships. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion, not Extra Special GitHub.
+  </p>
+
+  <StackDiagram />
+
+  {
+    order.map((eco) => (
+      <section>
+        <h2 class="section-title">{ecosystemLabels[eco]}</h2>
+        <div class="grid">
+          {modsByEcosystem(eco).map((mod) => (
+            <ProjectCard mod={mod} />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

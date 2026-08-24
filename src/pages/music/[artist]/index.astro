@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ReleaseCard from "../../../components/ReleaseCard.astro";
+import { artists, getArtist } from "../../../data/music";
+
+export function getStaticPaths() {
+  return artists.map((a) => ({ params: { artist: a.id } }));
+}
+
+const artist = getArtist(Astro.params.artist!);
+if (!artist) throw new Error("Unknown artist");
+---
+
+<BaseLayout title={artist.name} description={artist.blurb} path={`/music/${artist.id}`}>
+  <p><a href="/music">← Music</a></p>
+  <h1>{artist.name}</h1>
+  <p class="lede">{artist.long}</p>
+  <h2 class="section-title">Releases</h2>
+  {
+    artist.releases.length > 0 ? (
+      <div class="grid">
+        {artist.releases.map((release) => (
+          <ReleaseCard artistId={artist.id} release={release} />
+        ))}
+      </div>
+    ) : (
+      <p>No public releases listed yet. Artwork and streaming links will appear here when they are real.</p>
+    )
+  }
+</BaseLayout>
