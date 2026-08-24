@@ -4,6 +4,10 @@ Canonical URL: **https://extraspecialstudio.co.uk**
 
 This is a static [Astro](https://astro.build) site. GitHub Pages hosts it from this organisation repository (`ESS-Extra-Special-Studio.github.io`). Do not present `*.github.io` as the studio address.
 
+## GitHub Actions (Pages)
+
+The deploy workflow lives in `pages-deploy.workflow.yml` at the repo root. Copy it to `.github/workflows/deploy.yml` in the GitHub web UI if the CLI cannot push workflow files (`workflow` OAuth scope). Then **Settings → Pages → GitHub Actions**, custom domain `extraspecialstudio.co.uk`, HTTPS after DNS.
+
 ## Local
 
 Requires Node 22+. From this folder:
