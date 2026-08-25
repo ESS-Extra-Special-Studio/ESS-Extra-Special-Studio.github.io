@@ -18,7 +18,7 @@ export const news: NewsItem[] = [
     id: "github-org",
     date: "2026-08-24",
     title: "Source on GitHub",
-    body: "Minecraft mods ship from the Extra Special Studio GitHub organisation. Radio Towers remains a companion project, not Extra Special GitHub.",
+    body: "Minecraft mods ship from the Extra Special Studio GitHub organisation. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod.",
     href: "https://github.com/ESS-Extra-Special-Studio",
   },
   {
