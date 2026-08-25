@@ -95,17 +95,23 @@ a:hover {
   text-decoration: none;
 }
 
-.brand-wordmark {
+.brand-badge {
   height: 48px;
-  width: auto;
+  width: 48px;
   display: block;
+  border-radius: 10px;
 }
 
-.brand-badge {
-  height: 40px;
-  width: 40px;
-  display: none;
-  border-radius: 8px;
+.hero {
+  text-align: center;
+}
+
+.home-wordmark {
+  display: block;
+  width: min(42rem, 100%);
+  height: auto;
+  margin: 0.5rem auto 1.5rem;
+  mix-blend-mode: lighten;
 }
 
 .nav {
@@ -339,12 +345,8 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .brand-wordmark {
-    display: none;
-  }
-
-  .brand-badge {
-    display: block;
+  .home-wordmark {
+    width: min(100%, 28rem);
   }
 
   .menu-toggle {

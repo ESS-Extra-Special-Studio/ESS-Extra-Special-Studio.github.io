@@ -11,6 +11,13 @@ const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
 
 <BaseLayout title="Extra Special Studio" description={studio.tagline} path="/">
   <section class="hero">
+    <img
+      class="home-wordmark"
+      src="/images/brand/wordmark.png"
+      alt="Extra Special Studio"
+      width="720"
+      height="240"
+    />
     <h1>{studio.tagline}</h1>
     <p class="lede">{studio.intro}</p>
   </section>
