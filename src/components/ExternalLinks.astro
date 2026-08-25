@@ -9,6 +9,11 @@ type Links = {
   youtube?: string;
   steam?: string;
   itch?: string;
+  patreon?: string;
+  buymeacoffee?: string;
+  kofi?: string;
+  discord?: string;
+  email?: string;
 };
 
 const { links } = Astro.props as { links: Links };
@@ -23,6 +28,11 @@ const defs: { key: keyof Links; label: string }[] = [
   { key: "youtube", label: "YouTube" },
   { key: "steam", label: "Steam" },
   { key: "itch", label: "itch.io" },
+  { key: "patreon", label: "Patreon" },
+  { key: "buymeacoffee", label: "Buy Me a Coffee" },
+  { key: "kofi", label: "Ko-fi" },
+  { key: "discord", label: "Discord" },
+  { key: "email", label: "Email" },
 ];
 
 const present = defs.filter((d) => links[d.key]);
@@ -31,7 +41,11 @@ const present = defs.filter((d) => links[d.key]);
 <div class="links">
   {
     present.map((d) => (
-      <a class="btn" href={links[d.key]} rel="noopener noreferrer">
+      <a
+        class="btn"
+        href={d.key === "email" && links.email && !links.email.startsWith("mailto:") ? `mailto:${links.email}` : links[d.key]}
+        rel="noopener noreferrer"
+      >
         {d.label}
       </a>
     ))

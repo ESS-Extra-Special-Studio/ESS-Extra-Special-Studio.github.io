@@ -22,7 +22,7 @@ npm run build
 
 Edit `src/data/mods.ts`. Do not invent CurseForge, Modrinth, Discord, or other URLs. Omit the field until a real link exists. Missing icons use a placeholder tile — do not invent logos.
 
-Music: `src/data/music.ts`. Games: `src/data/games.ts`. Home news: `src/data/news.ts`. Featured ids: `src/data/featured.ts`. Studio copy: `src/data/studio.ts`.
+Music: `src/data/music.ts`. Games: `src/data/games.ts` (keep empty until a game is public). Help/donate URLs: `src/data/support.ts` — never invent Buy Me a Coffee, Patreon, Discord, or email. Home news: `src/data/news.ts`.
 
 ## DNS (apex)
 

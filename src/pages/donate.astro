@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExternalLinks from "../components/ExternalLinks.astro";
+import { donate } from "../data/support";
+---
+
+<BaseLayout
+  title="Donate"
+  description="Support Extra Special Studio. Donation links appear here when they are live."
+  path="/donate"
+>
+  <h1>Donate</h1>
+  <p class="lede">
+    If you want to support Extra Special Studio, this is the place. Buy Me a Coffee, Patreon, and similar links will be added when the accounts are ready. Nothing is linked until then.
+  </p>
+  <ExternalLinks
+    links={{
+      buymeacoffee: donate.buymeacoffee,
+      patreon: donate.patreon,
+      kofi: donate.kofi,
+    }}
+  />
+</BaseLayout>
