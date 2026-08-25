@@ -1,23 +1,24 @@
 ---
+import EswFooter from "../../esw/components/EswFooter.astro";
 import { studio } from "../data/studio";
+
+const items = [
+  { href: "/", label: "Home" },
+  { href: "/mods", label: "Mods" },
+  { href: "/music", label: "Music" },
+  { href: "/games", label: "Games" },
+  { href: "/studio", label: "Studio" },
+  { href: "/help", label: "Help" },
+  { href: "/donate", label: "Donate" },
+  { href: "/developers", label: "Developers" },
+  { href: studio.githubOrg, label: "GitHub" },
+];
 ---
 
-<footer class="site-footer">
-  <div class="wrap">
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      <a href="/mods">Mods</a>
-      <a href="/music">Music</a>
-      <a href="/games">Games</a>
-      <a href="/studio">Studio</a>
-      <a href="/help">Help</a>
-      <a href="/donate">Donate</a>
-      <a href="/developers">Developers</a>
-      <a href={studio.githubOrg}>GitHub</a>
-    </nav>
-    <p>
-      <img src="/images/brand/badge.png" alt="" width="28" height="28" style="vertical-align: middle; border-radius: 6px; margin-right: 0.4rem;" />
-      Extra Special Studio · <a href={studio.canonical}>extraspecialstudio.co.uk</a>
-    </p>
-  </div>
-</footer>
+<EswFooter
+  items={items}
+  badgeSrc="/images/brand/badge.png"
+  credit="Extra Special Studio"
+  siteHref={studio.canonical}
+  siteLabel="extraspecialstudio.co.uk"
+/>

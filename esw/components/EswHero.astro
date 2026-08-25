@@ -1,0 +1,20 @@
+---
+type Props = {
+  wordmarkSrc?: string;
+  wordmarkAlt?: string;
+  title: string;
+  lede: string;
+};
+
+const { wordmarkSrc, wordmarkAlt = "", title, lede } = Astro.props as Props;
+---
+
+<section class="hero">
+  {
+    wordmarkSrc && (
+      <img class="home-wordmark" src={wordmarkSrc} alt={wordmarkAlt} width="720" height="240" />
+    )
+  }
+  <h1>{title}</h1>
+  <p class="lede">{lede}</p>
+</section>

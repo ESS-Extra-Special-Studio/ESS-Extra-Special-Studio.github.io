@@ -1,58 +1,8 @@
 ---
-type Links = {
-  github?: string;
-  curseforge?: string;
-  modrinth?: string;
-  docs?: string;
-  spotify?: string;
-  bandcamp?: string;
-  youtube?: string;
-  steam?: string;
-  itch?: string;
-  patreon?: string;
-  buymeacoffee?: string;
-  kofi?: string;
-  discord?: string;
-  email?: string;
-};
+import EswExternalLinks from "../../esw/components/EswExternalLinks.astro";
+import type { EswExternalLinks as Links } from "../../esw/types";
 
 const { links } = Astro.props as { links: Links };
-
-const defs: { key: keyof Links; label: string }[] = [
-  { key: "github", label: "GitHub" },
-  { key: "curseforge", label: "CurseForge" },
-  { key: "modrinth", label: "Modrinth" },
-  { key: "docs", label: "Docs" },
-  { key: "spotify", label: "Spotify" },
-  { key: "bandcamp", label: "Bandcamp" },
-  { key: "youtube", label: "YouTube" },
-  { key: "steam", label: "Steam" },
-  { key: "itch", label: "itch.io" },
-  { key: "patreon", label: "Patreon" },
-  { key: "buymeacoffee", label: "Buy Me a Coffee" },
-  { key: "kofi", label: "Ko-fi" },
-  { key: "discord", label: "Discord" },
-  { key: "email", label: "Email" },
-];
-
-const present = defs.filter((d) => links[d.key]);
 ---
 
-<div class="links">
-  {
-    present.map((d) => (
-      <a
-        class="btn"
-        href={d.key === "email" && links.email && !links.email.startsWith("mailto:") ? `mailto:${links.email}` : links[d.key]}
-        rel="noopener noreferrer"
-      >
-        {d.label}
-      </a>
-    ))
-  }
-  {
-    present.length === 0 && (
-      <span class="btn" aria-disabled="true">Coming soon</span>
-    )
-  }
-</div>
+<EswExternalLinks links={links} />

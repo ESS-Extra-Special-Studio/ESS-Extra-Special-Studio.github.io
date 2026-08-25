@@ -19,7 +19,14 @@ if (!mod) {
   <header style="display:flex; gap:1rem; align-items:flex-start; margin: 1rem 0 1.5rem;">
     {
       mod.icon ? (
-        <img class="icon" src={mod.icon} alt="" width="64" height="64" style="width:64px;height:64px;" />
+        <img
+          class:list={["icon", mod.pixelIcon && "icon-pixel"]}
+          src={mod.icon}
+          alt=""
+          width="128"
+          height="128"
+          style="width:128px;height:128px;"
+        />
       ) : (
         <div class="icon-ph" style="width:64px;height:64px;" aria-hidden="true">
           ESS

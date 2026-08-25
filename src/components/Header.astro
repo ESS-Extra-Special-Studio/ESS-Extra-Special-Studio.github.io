@@ -1,4 +1,6 @@
 ---
+import EswHeader from "../../esw/components/EswHeader.astro";
+
 const path = Astro.url.pathname;
 const items = [
   { href: "/", label: "Home" },
@@ -9,37 +11,11 @@ const items = [
   { href: "/help", label: "Help" },
   { href: "/donate", label: "Donate" },
 ];
-
-function current(href: string) {
-  if (href === "/") return path === "/";
-  return path === href || path.startsWith(href + "/");
-}
 ---
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <img class="brand-badge" src="/images/brand/badge.png" alt="Extra Special Studio" width="48" height="48" />
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="menu-btn">
-      Menu
-    </button>
-    <nav class="nav" id="site-nav" aria-label="Primary">
-      {
-        items.map((item) => (
-          <a href={item.href} aria-current={current(item.href) ? "page" : undefined}>
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
-  </div>
-</header>
-<script>
-  const btn = document.getElementById("menu-btn");
-  const nav = document.getElementById("site-nav");
-  btn?.addEventListener("click", () => {
-    const open = nav?.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-</script>
+<EswHeader
+  badgeSrc="/images/brand/badge.png"
+  badgeAlt="Extra Special Studio"
+  items={items}
+  currentPath={path}
+/>

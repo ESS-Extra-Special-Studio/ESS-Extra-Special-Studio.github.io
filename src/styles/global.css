@@ -208,12 +208,17 @@ main {
 
 .icon,
 .icon-ph {
-  width: 48px;
-  height: 48px;
+  width: 88px;
+  height: 88px;
   border-radius: 8px;
   flex-shrink: 0;
   object-fit: contain;
   background: #0a090e;
+}
+
+.icon-pixel {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .icon-ph {

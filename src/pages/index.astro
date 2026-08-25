@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import EswHero from "../../esw/components/EswHero.astro";
+import EswNewsList from "../../esw/components/EswNewsList.astro";
 import { studio } from "../data/studio";
 import { news } from "../data/news";
 import { featuredModIds } from "../data/featured";
@@ -10,17 +12,12 @@ const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
 ---
 
 <BaseLayout title="Extra Special Studio" description={studio.tagline} path="/">
-  <section class="hero">
-    <img
-      class="home-wordmark"
-      src="/images/brand/wordmark.png"
-      alt="Extra Special Studio"
-      width="720"
-      height="240"
-    />
-    <h1>{studio.tagline}</h1>
-    <p class="lede">{studio.intro}</p>
-  </section>
+  <EswHero
+    wordmarkSrc="/images/brand/wordmark.png"
+    wordmarkAlt="Extra Special Studio"
+    title={studio.tagline}
+    lede={studio.intro}
+  />
 
   <section class="pillars" aria-label="Pillars">
     <a class="card" href="/mods">
@@ -38,17 +35,7 @@ const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
   </section>
 
   <h2 class="section-title">Latest</h2>
-  <ol class="news-list">
-    {
-      news.map((item) => (
-        <li>
-          <time datetime={item.date}>{item.date}</time>
-          <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
-          <p>{item.body}</p>
-        </li>
-      ))
-    }
-  </ol>
+  <EswNewsList items={news} />
 
   <h2 class="section-title">Featured mods</h2>
   <div class="grid">

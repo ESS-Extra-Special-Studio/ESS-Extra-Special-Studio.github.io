@@ -19,6 +19,7 @@ export type Mod = {
   loaders: string[];
   links: ExternalLinks;
   icon?: string;
+  pixelIcon?: boolean;
   stackNote?: string;
 };
 
@@ -338,6 +339,8 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Evil-Eye" },
+    icon: "/images/mods/evil-eye.png",
+    pixelIcon: true,
   },
   {
     id: "supplefix",

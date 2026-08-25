@@ -1,16 +1,13 @@
 ---
+import EswReleaseCard from "../../esw/components/EswReleaseCard.astro";
 import type { Release } from "../data/music";
 
 const { artistId, release } = Astro.props as { artistId: string; release: Release };
 ---
 
-<a class="card project-card" href={`/music/${artistId}/${release.id}`}>
-  <div class="icon-ph" aria-hidden="true">{release.kind}</div>
-  <div>
-    <h3>{release.title}</h3>
-    <p>
-      {release.kind}
-      {release.year ? ` · ${release.year}` : ""}
-    </p>
-  </div>
-</a>
+<EswReleaseCard
+  href={`/music/${artistId}/${release.id}`}
+  title={release.title}
+  kind={release.kind}
+  year={release.year}
+/>

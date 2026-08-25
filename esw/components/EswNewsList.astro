@@ -1,0 +1,17 @@
+---
+import type { EswNewsItem } from "../types";
+
+const { items } = Astro.props as { items: EswNewsItem[] };
+---
+
+<ol class="news-list">
+  {
+    items.map((item) => (
+      <li>
+        <time datetime={item.date}>{item.date}</time>
+        <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+        <p>{item.body}</p>
+      </li>
+    ))
+  }
+</ol>

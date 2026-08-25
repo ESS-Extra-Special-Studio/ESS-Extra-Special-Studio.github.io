@@ -1,20 +1,15 @@
 ---
+import EswProjectCard from "../../esw/components/EswProjectCard.astro";
 import type { Mod } from "../data/mods";
 
 const { mod } = Astro.props as { mod: Mod };
 ---
 
-<a class="card project-card" href={`/mods/${mod.id}`}>
-  {
-    mod.icon ? (
-      <img class="icon" src={mod.icon} alt="" width="48" height="48" />
-    ) : (
-      <div class="icon-ph" aria-hidden="true">ESS</div>
-    )
-  }
-  <div>
-    <h3>{mod.name}</h3>
-    <p>{mod.short}</p>
-    <span class="status">{mod.status}</span>
-  </div>
-</a>
+<EswProjectCard
+  href={`/mods/${mod.id}`}
+  title={mod.name}
+  description={mod.short}
+  status={mod.status}
+  icon={mod.icon}
+  pixelIcon={mod.pixelIcon}
+/>

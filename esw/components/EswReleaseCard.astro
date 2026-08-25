@@ -1,0 +1,21 @@
+---
+type Props = {
+  href: string;
+  title: string;
+  kind: string;
+  year?: number;
+};
+
+const { href, title, kind, year } = Astro.props as Props;
+---
+
+<a class="card project-card" href={href}>
+  <div class="icon-ph" aria-hidden="true">{kind}</div>
+  <div>
+    <h3>{title}</h3>
+    <p>
+      {kind}
+      {year ? ` · ${year}` : ""}
+    </p>
+  </div>
+</a>

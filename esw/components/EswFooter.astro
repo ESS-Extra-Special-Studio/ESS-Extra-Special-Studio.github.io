@@ -1,0 +1,25 @@
+---
+import type { EswNavItem } from "../types";
+
+type Props = {
+  items: EswNavItem[];
+  badgeSrc: string;
+  credit: string;
+  siteHref: string;
+  siteLabel: string;
+};
+
+const { items, badgeSrc, credit, siteHref, siteLabel } = Astro.props as Props;
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav class="footer-nav" aria-label="Footer">
+      {items.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <p>
+      <img src={badgeSrc} alt="" width="28" height="28" style="vertical-align: middle; border-radius: 6px; margin-right: 0.4rem;" />
+      {credit} · <a href={siteHref}>{siteLabel}</a>
+    </p>
+  </div>
+</footer>

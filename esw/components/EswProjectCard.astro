@@ -1,0 +1,28 @@
+---
+import type { EswProjectCard } from "../types";
+
+const { href, title, description, status, icon, pixelIcon } = Astro.props as EswProjectCard;
+---
+
+<a class="card project-card" href={href}>
+  {
+    icon ? (
+      <img
+        class:list={["icon", pixelIcon && "icon-pixel"]}
+        src={icon}
+        alt=""
+        width="88"
+        height="88"
+      />
+    ) : (
+      <div class="icon-ph" aria-hidden="true">
+        ESS
+      </div>
+    )
+  }
+  <div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    {status && <span class="status">{status}</span>}
+  </div>
+</a>
