@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import { software, getSoftware } from "../../data/software";
+
+export function getStaticPaths() {
+  return software.map((item) => ({ params: { slug: item.id } }));
+}
+
+const item = getSoftware(Astro.params.slug!);
+if (!item) throw new Error("Unknown software");
+---
+
+<BaseLayout title={item.name} description={item.short} path={`/software/${item.id}`}>
+  <p><a href="/software">← Software</a></p>
+  <EswPageHeader title={item.name} lede={item.long} />
+  <p>
+    <span class="status">{item.status}</span>
+    {item.kind ? ` · ${item.kind}` : ""}
+  </p>
+  <ExternalLinks links={item.links} />
+</BaseLayout>

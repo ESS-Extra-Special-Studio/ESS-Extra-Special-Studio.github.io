@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import EswProjectCard from "../../../esw/components/EswProjectCard.astro";
+import { software } from "../../data/software";
+---
+
+<BaseLayout
+  title="Software"
+  description="Extra Special Studio software. Extra Special Web and other tools — not Minecraft mods."
+  path="/software"
+>
+  <EswPageHeader
+    title="Software"
+    lede="This is studio tooling for the web and beyond. It is not the Minecraft Extra Special stack (ESL, ESC, ESH, ESG). Those stay under Mods."
+  />
+  <div class="grid">
+    {
+      software.map((item) => (
+        <EswProjectCard
+          href={`/software/${item.id}`}
+          title={item.name}
+          description={item.short}
+          status={item.status}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>

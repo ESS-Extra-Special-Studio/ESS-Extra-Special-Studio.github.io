@@ -91,7 +91,7 @@ export const mods: Mod[] = [
     name: "WhatLIB?",
     short: "Utility library surfaced through Extra Special Hub.",
     long: "WhatLIB is an Extra Special utility module. It is not part of the ESL→ESC stack chain; it consumes the hub.",
-    ecosystem: "ess",
+    ecosystem: "other",
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],

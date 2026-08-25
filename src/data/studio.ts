@@ -2,9 +2,9 @@ export const studio = {
   name: "Extra Special Studio",
   tagline: "Independent development across games, mods, music and technology.",
   intro:
-    "Extra Special Studio is an independent creative studio. Minecraft mods are one pillar. Music (Parallel Horizons) sits beside them. Technology — shared libraries, hubs, and tools — is how those pieces talk to each other.",
+    "Extra Special Studio is an independent creative studio. Minecraft mods are one pillar. Music (Parallel Horizons) sits beside them. Software — Extra Special Web and other tools — is how we reuse what we build. Technology in Minecraft (ESL, ESC, ESH) stays on Mods.",
   about:
-    "We ship Extra Special Minecraft mods from the Extra Special Studio GitHub organisation. We do not list store, Discord, or streaming links until they are real. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod.",
+    "We ship Extra Special Minecraft mods from the Extra Special Studio GitHub organisation. Extra Special Web (ESW) is software, not a Minecraft mod. We do not list store, Discord, or streaming links until they are real. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod.",
   githubOrg: "https://github.com/ESS-Extra-Special-Studio",
   canonical: "https://extraspecialstudio.co.uk",
 };
