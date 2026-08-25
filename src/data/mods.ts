@@ -120,6 +120,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Aegis-Accord" },
+    icon: "/images/mods/aegis.png",
   },
   {
     id: "hermes",
@@ -155,7 +156,6 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
     links: {},
-    icon: "/images/mods/radio-towers.png",
     stackNote: "Companion, not Extra Special GitHub.",
   },
   {
@@ -170,6 +170,7 @@ export const mods: Mod[] = [
     links: {
       github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Pip-Boy-Radio-Conversion",
     },
+    icon: "/images/mods/pip-boy-radio.png",
   },
   {
     id: "dead-letters",
@@ -181,6 +182,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Letters" },
+    icon: "/images/mods/dead-letters.png",
   },
   {
     id: "nag",
@@ -192,6 +194,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/NAG" },
+    icon: "/images/mods/nag.png",
   },
   {
     id: "after-hours-fm",
@@ -203,6 +206,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-After-Hours-FM" },
+    icon: "/images/mods/after-hours-fm.png",
   },
   {
     id: "beat-blocks",
@@ -214,6 +218,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Beat-Blocks" },
+    icon: "/images/mods/beat-blocks.png",
   },
   {
     id: "broken-youth-radio",
@@ -225,6 +230,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Broken-Youth-Radio" },
+    icon: "/images/mods/broken-youth-radio.png",
   },
   {
     id: "frontline-fm",
@@ -236,6 +242,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Frontline-FM" },
+    icon: "/images/mods/frontline-fm.png",
   },
   {
     id: "iron-rain-fm",
@@ -247,6 +254,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Iron-Rain-FM" },
+    icon: "/images/mods/iron-rain-fm.png",
   },
   {
     id: "wayfarer-radio",
@@ -258,6 +266,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Wayfarer-Radio" },
+    icon: "/images/mods/wayfarer-radio.png",
   },
   {
     id: "zero-gravity",
@@ -269,6 +278,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Zero-Gravity" },
+    icon: "/images/mods/zero-gravity.png",
   },
   {
     id: "ctl",
