@@ -340,7 +340,6 @@ export const mods: Mod[] = [
     loaders: ["Forge", "NeoForge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Evil-Eye" },
     icon: "/images/mods/evil-eye.png",
-    pixelIcon: true,
   },
   {
     id: "supplefix",
