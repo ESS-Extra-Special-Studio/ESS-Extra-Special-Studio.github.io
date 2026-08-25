@@ -262,6 +262,17 @@ main {
   margin-top: 0.35rem;
 }
 
+.game-block {
+  margin-top: 0.5rem;
+}
+
+.game-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
 .section-title {
   margin: 2.4rem 0 0.9rem;
   font-size: 0.78rem;

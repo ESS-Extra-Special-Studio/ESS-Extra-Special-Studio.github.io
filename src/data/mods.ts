@@ -1,3 +1,4 @@
+export type GameId = "minecraft";
 export type Ecosystem = "ess" | "pantheon" | "dead-air" | "other";
 export type ModStatus = "shipped" | "development" | "planned" | "companion";
 
@@ -13,6 +14,7 @@ export type Mod = {
   name: string;
   short: string;
   long: string;
+  game?: GameId;
   ecosystem: Ecosystem;
   status: ModStatus;
   mcVersions: string[];
@@ -368,6 +370,13 @@ export const mods: Mod[] = [
   },
 ];
 
+export const gameLabels: Record<GameId, string> = {
+  minecraft: "Minecraft",
+};
+
+/** Add a new GameId + label here when we ship mods for another game. */
+export const gameOrder: GameId[] = ["minecraft"];
+
 export const ecosystemLabels: Record<Ecosystem, string> = {
   ess: "Extra Special stack",
   pantheon: "Pantheon",
@@ -375,10 +384,14 @@ export const ecosystemLabels: Record<Ecosystem, string> = {
   other: "Standalone & utility",
 };
 
+export function modGame(mod: Mod): GameId {
+  return mod.game ?? "minecraft";
+}
+
 export function getMod(id: string): Mod | undefined {
   return mods.find((m) => m.id === id);
 }
 
-export function modsByEcosystem(eco: Ecosystem): Mod[] {
-  return mods.filter((m) => m.ecosystem === eco);
+export function modsByEcosystem(eco: Ecosystem, game: GameId = "minecraft"): Mod[] {
+  return mods.filter((m) => modGame(m) === game && m.ecosystem === eco);
 }

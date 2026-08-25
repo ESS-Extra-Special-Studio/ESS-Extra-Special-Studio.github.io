@@ -3,33 +3,48 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import StackDiagram from "../../components/StackDiagram.astro";
 import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
-import { ecosystemLabels, modsByEcosystem, type Ecosystem } from "../../data/mods";
+import {
+  ecosystemLabels,
+  gameLabels,
+  gameOrder,
+  modsByEcosystem,
+  type Ecosystem,
+} from "../../data/mods";
 
-const order: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
+const ecosystems: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
 ---
 
 <BaseLayout
   title="Mods"
-  description="Extra Special Studio Minecraft mods: stack, Pantheon, Dead Air, and standalone tools."
+  description="Extra Special Studio mods, grouped by game. Minecraft first; other games when we ship them."
   path="/mods"
 >
   <EswPageHeader
     title="Mods"
-    lede="Categories match how the studio actually ships. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod."
+    lede="Grouped by game. Minecraft is here now. Another game gets its own heading on this page when we actually ship mods for it. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod."
   />
 
-  <StackDiagram />
-
   {
-    order.map((eco) => (
-      <section>
-        <h2 class="section-title">{ecosystemLabels[eco]}</h2>
-        <div class="grid">
-          {modsByEcosystem(eco).map((mod) => (
-            <ProjectCard mod={mod} />
+    gameOrder.map((game) => {
+      const groups = ecosystems
+        .map((eco) => ({ eco, items: modsByEcosystem(eco, game) }))
+        .filter((g) => g.items.length > 0);
+      return (
+        <section class="game-block">
+          <h2 class="game-title">{gameLabels[game]}</h2>
+          {game === "minecraft" && <StackDiagram />}
+          {groups.map(({ eco, items }) => (
+            <section>
+              <h3 class="section-title">{ecosystemLabels[eco]}</h3>
+              <div class="grid">
+                {items.map((mod) => (
+                  <ProjectCard mod={mod} />
+                ))}
+              </div>
+            </section>
           ))}
-        </div>
-      </section>
-    ))
+        </section>
+      );
+    })
   }
 </BaseLayout>
