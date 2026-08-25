@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ReleaseCard from "../../../components/ReleaseCard.astro";
+import EswPageHeader from "../../../../esw/components/EswPageHeader.astro";
+import EswEmptyState from "../../../../esw/components/EswEmptyState.astro";
 import { artists, getArtist } from "../../../data/music";
 
 export function getStaticPaths() {
@@ -13,8 +15,7 @@ if (!artist) throw new Error("Unknown artist");
 
 <BaseLayout title={artist.name} description={artist.blurb} path={`/music/${artist.id}`}>
   <p><a href="/music">← Music</a></p>
-  <h1>{artist.name}</h1>
-  <p class="lede">{artist.long}</p>
+  <EswPageHeader title={artist.name} lede={artist.long} />
   <h2 class="section-title">Releases</h2>
   {
     artist.releases.length > 0 ? (
@@ -24,7 +25,7 @@ if (!artist) throw new Error("Unknown artist");
         ))}
       </div>
     ) : (
-      <p>No public releases listed yet. Artwork and streaming links will appear here when they are real.</p>
+      <EswEmptyState message="No public releases listed yet. Artwork and streaming links will appear here when they are real." />
     )
   }
 </BaseLayout>

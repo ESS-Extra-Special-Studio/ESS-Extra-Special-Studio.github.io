@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExternalLinks from "../components/ExternalLinks.astro";
+import EswPageHeader from "../../esw/components/EswPageHeader.astro";
 import { donate } from "../data/support";
 ---
 
@@ -9,10 +10,10 @@ import { donate } from "../data/support";
   description="Support Extra Special Studio. Donation links appear here when they are live."
   path="/donate"
 >
-  <h1>Donate</h1>
-  <p class="lede">
-    If you want to support Extra Special Studio, this is the place. Buy Me a Coffee, Patreon, and similar links will be added when the accounts are ready. Nothing is linked until then.
-  </p>
+  <EswPageHeader
+    title="Donate"
+    lede="If you want to support Extra Special Studio, this is the place. Buy Me a Coffee, Patreon, and similar links will be added when the accounts are ready. Nothing is linked until then."
+  />
   <ExternalLinks
     links={{
       buymeacoffee: donate.buymeacoffee,

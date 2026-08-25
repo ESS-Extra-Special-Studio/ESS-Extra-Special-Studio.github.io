@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import StackDiagram from "../../components/StackDiagram.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
 import { ecosystemLabels, modsByEcosystem, type Ecosystem } from "../../data/mods";
 
 const order: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
@@ -12,10 +13,10 @@ const order: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
   description="Extra Special Studio Minecraft mods: stack, Pantheon, Dead Air, and standalone tools."
   path="/mods"
 >
-  <h1>Mods</h1>
-  <p class="lede">
-    Categories match how the studio actually ships. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod.
-  </p>
+  <EswPageHeader
+    title="Mods"
+    lede="Categories match how the studio actually ships. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod."
+  />
 
   <StackDiagram />
 

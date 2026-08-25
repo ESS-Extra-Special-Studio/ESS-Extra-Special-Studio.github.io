@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExternalLinks from "../components/ExternalLinks.astro";
+import EswPageHeader from "../../esw/components/EswPageHeader.astro";
 import { support } from "../data/support";
 ---
 
@@ -9,10 +10,10 @@ import { support } from "../data/support";
   description="How to get support for Extra Special Studio mods, music, and the studio site."
   path="/help"
 >
-  <h1>Help</h1>
-  <p class="lede">
-    Web support will live here: how to report bugs, where to ask questions, and links to docs when they exist. Discord and a support inbox stay off this page until those addresses are real.
-  </p>
+  <EswPageHeader
+    title="Help"
+    lede="Web support will live here: how to report bugs, where to ask questions, and links to docs when they exist. Discord and a support inbox stay off this page until those addresses are real."
+  />
   <h2 class="section-title">Right now</h2>
   <p>
     Minecraft mods are developed in the public Extra Special Studio GitHub organisation. Issues on the relevant repo are the current support path.

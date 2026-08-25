@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import EswPageHeader from "../../esw/components/EswPageHeader.astro";
 ---
 
 <BaseLayout
@@ -7,10 +8,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="Developer documentation for Extra Special Studio is coming."
   path="/developers"
 >
-  <h1>Developers</h1>
-  <p class="lede">
-    Documentation for Extra Special Lib, Core, Hub, and related APIs will land here. This route exists so docs can be added without restructuring the site.
-  </p>
+  <EswPageHeader
+    title="Developers"
+    lede="Documentation for Extra Special Lib, Core, Hub, and related APIs will land here. This route exists so docs can be added without restructuring the site."
+  />
   <p>Documentation coming.</p>
   <p><a href="/studio">Studio</a> · <a href="/mods">Mods</a></p>
 </BaseLayout>

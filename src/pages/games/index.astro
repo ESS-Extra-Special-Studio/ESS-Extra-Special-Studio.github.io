@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import EswEmptyState from "../../../esw/components/EswEmptyState.astro";
 import { games } from "../../data/games";
 ---
 
@@ -8,10 +10,10 @@ import { games } from "../../data/games";
   description="Extra Special Studio games. Titles appear here only when they are public."
   path="/games"
 >
-  <h1>Games</h1>
-  <p class="lede">
-    Extra Special Studio also makes games. Nothing is listed here until it is meant to be public. Nothing here is marketed as a shipped store title until it actually is.
-  </p>
+  <EswPageHeader
+    title="Games"
+    lede="Extra Special Studio also makes games. Nothing is listed here until it is meant to be public. Nothing here is marketed as a shipped store title until it actually is."
+  />
   {
     games.length > 0 ? (
       <div class="grid">
@@ -29,7 +31,7 @@ import { games } from "../../data/games";
         ))}
       </div>
     ) : (
-      <p>No public games to show yet.</p>
+      <EswEmptyState message="No public games to show yet." />
     )
   }
 </BaseLayout>
