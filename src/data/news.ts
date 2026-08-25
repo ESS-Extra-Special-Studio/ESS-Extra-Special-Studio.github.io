@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "modpacks",
+    date: "2026-08-25",
+    title: "Modpacks on the studio site",
+    body: "Creatopia Unbound and C.ideas are listed under Modpacks, with CurseForge as the download page.",
+    href: "/modpacks",
+  },
+  {
     id: "site-live",
     date: "2026-08-24",
     title: "Studio site is live",

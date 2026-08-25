@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import { modpacks, getModpack } from "../../data/modpacks";
+
+export function getStaticPaths() {
+  return modpacks.map((item) => ({ params: { slug: item.id } }));
+}
+
+const item = getModpack(Astro.params.slug!);
+if (!item) throw new Error("Unknown modpack");
+---
+
+<BaseLayout title={item.name} description={item.short} path={`/modpacks/${item.id}`}>
+  <p><a href="/modpacks">← Modpacks</a></p>
+  <EswPageHeader title={item.name} lede={item.long} />
+  <p>
+    <span class="status">{item.status}</span>
+  </p>
+  <ExternalLinks links={item.links} />
+</BaseLayout>

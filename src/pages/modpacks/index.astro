@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import EswProjectCard from "../../../esw/components/EswProjectCard.astro";
+import { modpacks } from "../../data/modpacks";
+---
+
+<BaseLayout
+  title="Modpacks"
+  description="Extra Special Studio Minecraft modpacks: Creatopia Unbound and C.ideas."
+  path="/modpacks"
+>
+  <EswPageHeader
+    title="Modpacks"
+    lede="Full Minecraft packs on CurseForge. Individual mods stay on Mods."
+  />
+  <div class="grid">
+    {
+      modpacks.map((item) => (
+        <EswProjectCard
+          href={`/modpacks/${item.id}`}
+          title={item.name}
+          description={item.short}
+          status={item.status}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>
