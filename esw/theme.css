@@ -352,7 +352,7 @@ main {
   font-size: 0.85rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
   .home-wordmark {
     width: min(100%, 28rem);
   }
