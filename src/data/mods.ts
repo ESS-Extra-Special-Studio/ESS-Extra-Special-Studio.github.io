@@ -157,6 +157,7 @@ export const mods: Mod[] = [
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
     links: {},
+    icon: "/images/mods/radio-towers.png",
     stackNote: "Companion to Dead Air, not an Extra Special Studio mod.",
   },
   {
