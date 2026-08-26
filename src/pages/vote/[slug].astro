@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import { getPoll, pollCategoryLabels, pollStatusLabels } from "../../data/polls";
+
+export function getStaticPaths() {
+  return [] as { params: { slug: string } }[];
+}
+
+const { slug } = Astro.params;
+const poll = slug ? getPoll(slug) : undefined;
+
+if (!poll) {
+  return Astro.redirect("/vote");
+}
+
+const isClosed = poll.status !== "OPEN";
+---
+
+<BaseLayout title={poll.title} description={poll.description} path={`/vote/${poll.id}`}>
+  <EswPageHeader title={poll.title} lede={poll.description} />
+  <p class="vote-meta">
+    {pollCategoryLabels[poll.category]} · {pollStatusLabels[poll.status]}
+    {poll.endDate ? ` · ends ${poll.endDate}` : ""}
+  </p>
+
+  {poll.status === "OPEN" ? (
+    <p class="vote-note">Online voting opens when the ballot backend is enabled. Watch #announcements on Discord.</p>
+  ) : null}
+
+  <ol class="vote-options">
+    {poll.options.map((opt) => (
+      <li>
+        <strong>{opt.label}</strong>
+        {isClosed && opt.votePercent != null ? ` — ${opt.votePercent}%` : ""}
+        {isClosed && opt.voteCount != null ? ` (${opt.voteCount} votes)` : ""}
+      </li>
+    ))}
+  </ol>
+
+  {poll.outcome ? (
+    <section class="vote-outcome">
+      <h2 class="section-title">Outcome</h2>
+      <p>
+        <strong>{pollStatusLabels[poll.outcome.status]}</strong>
+        {poll.outcome.summary ? ` — ${poll.outcome.summary}` : ""}
+      </p>
+    </section>
+  ) : null}
+
+  <p><a href="/vote">← All votes</a></p>
+</BaseLayout>
+
+<style>
+  .vote-meta {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+  .vote-note {
+    padding: 1rem;
+    border: 1px solid var(--border, #333);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .vote-options {
+    margin: 0 0 2rem 1.25rem;
+  }
+  .vote-outcome {
+    margin-bottom: 2rem;
+  }
+</style>

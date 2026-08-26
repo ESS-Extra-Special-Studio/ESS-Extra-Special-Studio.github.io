@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-letters-1.0.4",
+    date: "2026-08-27",
+    title: "Dead Letters 1.0.4",
+    body: "Forge 1.20.1 rebuild for Extra Special Core 2.x, plus NeoForge 1.21.1 port. Download on CurseForge or Modrinth.",
+    href: "/mods/dead-letters",
+  },
+  {
     id: "modpacks",
     date: "2026-08-25",
     title: "Modpacks on the studio site",

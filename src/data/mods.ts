@@ -146,7 +146,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air", modrinth: "https://modrinth.com/mod/dead-air" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air" },
     icon: "/images/mods/dead-air.png",
   },
   {
@@ -174,7 +174,6 @@ export const mods: Mod[] = [
     links: {
       github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Pip-Boy-Radio-Conversion",
       curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-pip-boy-radio-conversion",
-      modrinth: "https://modrinth.com/mod/dead-air-pip-boy-radio-conversion",
     },
     icon: "/images/mods/pip-boy-radio.png",
   },
@@ -185,8 +184,8 @@ export const mods: Mod[] = [
     long: "Dead Letters is an Extra Special Studio Minecraft mod.",
     ecosystem: "other",
     status: "shipped",
-    mcVersions: ["1.20.1"],
-    loaders: ["Forge"],
+    mcVersions: ["1.20.1", "1.21.1"],
+    loaders: ["Forge", "NeoForge"],
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Letters", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-letters", modrinth: "https://modrinth.com/mod/dead-letters" },
     icon: "/images/mods/dead-letters.png",
   },
@@ -211,7 +210,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-After-Hours-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-after-hours-fm", modrinth: "https://modrinth.com/mod/dead-air-after-hours-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-After-Hours-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-after-hours-fm" },
     icon: "/images/mods/after-hours-fm.png",
   },
   {
@@ -223,7 +222,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Beat-Blocks", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-block-beats", modrinth: "https://modrinth.com/mod/dead-air-block-beats" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Beat-Blocks", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-block-beats" },
     icon: "/images/mods/beat-blocks.png",
   },
   {
@@ -235,7 +234,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Broken-Youth-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-broken-youth-radio", modrinth: "https://modrinth.com/mod/dead-air-broken-youth-radio" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Broken-Youth-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-broken-youth-radio" },
     icon: "/images/mods/broken-youth-radio.png",
   },
   {
@@ -247,7 +246,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Frontline-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-frontline-fm", modrinth: "https://modrinth.com/mod/dead-air-frontline-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Frontline-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-frontline-fm" },
     icon: "/images/mods/frontline-fm.png",
   },
   {
@@ -259,7 +258,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Iron-Rain-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-iron-rain-fm", modrinth: "https://modrinth.com/mod/dead-air-iron-rain-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Iron-Rain-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-iron-rain-fm" },
     icon: "/images/mods/iron-rain-fm.png",
   },
   {
@@ -271,7 +270,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Wayfarer-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-wayfarer-radio", modrinth: "https://modrinth.com/mod/dead-air-wayfarer-radio" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Wayfarer-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-wayfarer-radio" },
     icon: "/images/mods/wayfarer-radio.png",
   },
   {
@@ -283,7 +282,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Zero-Gravity", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-zero-gravity", modrinth: "https://modrinth.com/mod/dead-air-zero-gravity" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Zero-Gravity", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-zero-gravity" },
     icon: "/images/mods/zero-gravity.png",
   },
   {

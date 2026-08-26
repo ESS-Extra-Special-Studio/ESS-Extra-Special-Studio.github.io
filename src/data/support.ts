@@ -12,6 +12,7 @@ export type DonateLinks = {
 
 export const support: SupportLinks = {
   githubOrg: "https://github.com/ESS-Extra-Special-Studio",
+  discord: "https://discord.gg/dhnAuhNMQH",
 };
 
 export const donate: DonateLinks = {};

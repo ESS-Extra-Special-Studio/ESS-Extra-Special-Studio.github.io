@@ -7,8 +7,10 @@ import { studio } from "../data/studio";
 import { news } from "../data/news";
 import { featuredModIds } from "../data/featured";
 import { getMod } from "../data/mods";
+import { getOpenPolls } from "../data/polls";
 
 const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
+const openPolls = getOpenPolls();
 ---
 
 <BaseLayout title="Extra Special Studio" description={studio.tagline} path="/">
@@ -44,6 +46,19 @@ const featured = featuredModIds.map((id) => getMod(id)).filter(Boolean);
 
   <h2 class="section-title">Latest</h2>
   <EswNewsList items={news} />
+
+  {openPolls.length > 0 && (
+    <section class="community-votes" aria-label="Community votes">
+      <h2 class="section-title">Community votes</h2>
+      <p>{openPolls.length} vote{openPolls.length === 1 ? "" : "s"} currently open.</p>
+      <ul>
+        {openPolls.map((poll) => (
+          <li><a href={`/vote/${poll.id}`}>{poll.title}</a></li>
+        ))}
+      </ul>
+      <p><a class="btn" href="/vote">Vote now</a></p>
+    </section>
+  )}
 
   <h2 class="section-title">Featured mods</h2>
   <div class="grid">

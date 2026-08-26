@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import EswEmptyState from "../../../esw/components/EswEmptyState.astro";
+import { getClosedPolls, getOpenPolls, pollStatusLabels } from "../../data/polls";
+
+const openPolls = getOpenPolls();
+const closedPolls = getClosedPolls();
+---
+
+<BaseLayout
+  title="Vote"
+  description="Community votes on Extra Special Studio projects — official ballots on extraspecialstudio.co.uk."
+  path="/vote"
+>
+  <EswPageHeader
+    title="Community votes"
+    lede="Official studio polls live here. Discord announces active votes; casting a ballot always happens on this site."
+  />
+
+  {openPolls.length === 0 && closedPolls.length === 0 ? (
+    <EswEmptyState message="No votes right now — check back after announcements on Discord or watch this page." />
+  ) : (
+    <>
+      {openPolls.length > 0 && (
+        <>
+          <h2 class="section-title">Open</h2>
+          <ul class="vote-list">
+            {openPolls.map((poll) => (
+              <li>
+                <a href={`/vote/${poll.id}`}>{poll.title}</a>
+                <span class="vote-meta">{pollStatusLabels[poll.status]}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {closedPolls.length > 0 && (
+        <>
+          <h2 class="section-title">Past votes</h2>
+          <ul class="vote-list">
+            {closedPolls.map((poll) => (
+              <li>
+                <a href={`/vote/${poll.id}`}>{poll.title}</a>
+                <span class="vote-meta">{pollStatusLabels[poll.outcome?.status ?? poll.status]}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
+  )}
+</BaseLayout>
+
+<style>
+  .vote-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+  }
+  .vote-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border, #333);
+  }
+  .vote-meta {
+    opacity: 0.75;
+    font-size: 0.9rem;
+  }
+</style>
