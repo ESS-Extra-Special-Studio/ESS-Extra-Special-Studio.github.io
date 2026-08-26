@@ -35,7 +35,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESL", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esl-extra-special-lib" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESL", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esl-extra-special-lib", modrinth: "https://modrinth.com/mod/esl-extra-special-lib" },
     icon: "/images/mods/esl.png",
     stackNote: "Base of ESL → ESC → ESH / ESG / ESB.",
   },
@@ -48,7 +48,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESC", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esc-extra-special-core" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESC", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esc-extra-special-core", modrinth: "https://modrinth.com/mod/esc-extra-special-core" },
     icon: "/images/mods/esc.png",
   },
   {
@@ -60,7 +60,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESH", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esh-extra-special-hub" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/ESH", curseforge: "https://www.curseforge.com/minecraft/mc-mods/esh-extra-special-hub", modrinth: "https://modrinth.com/mod/esh-extra-special-hub" },
     icon: "/images/mods/esh.png",
   },
   {
@@ -97,7 +97,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/WhatLIB", curseforge: "https://www.curseforge.com/minecraft/mc-mods/whatlib" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/WhatLIB", curseforge: "https://www.curseforge.com/minecraft/mc-mods/whatlib", modrinth: "https://modrinth.com/mod/whatlib" },
     icon: "/images/mods/whatlib.png",
     stackNote: "Off-stack consumer (hub utility), not a stack layer.",
   },
@@ -110,7 +110,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/PantheonAPI", curseforge: "https://www.curseforge.com/minecraft/mc-mods/pantheonapi" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/PantheonAPI", curseforge: "https://www.curseforge.com/minecraft/mc-mods/pantheonapi", modrinth: "https://modrinth.com/mod/pantheonapi" },
     icon: "/images/mods/pantheonapi.png",
   },
   {
@@ -122,7 +122,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Aegis-Accord", curseforge: "https://www.curseforge.com/minecraft/mc-mods/aegis-accord" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Aegis-Accord", curseforge: "https://www.curseforge.com/minecraft/mc-mods/aegis-accord", modrinth: "https://modrinth.com/mod/aegis-accord" },
     icon: "/images/mods/aegis.png",
   },
   {
@@ -134,7 +134,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Hermes", curseforge: "https://www.curseforge.com/minecraft/mc-mods/hermes" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Hermes", curseforge: "https://www.curseforge.com/minecraft/mc-mods/hermes", modrinth: "https://modrinth.com/mod/ess-hermes" },
     icon: "/images/mods/hermes.png",
   },
   {
@@ -146,7 +146,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air", modrinth: "https://modrinth.com/mod/dead-air" },
     icon: "/images/mods/dead-air.png",
   },
   {
@@ -174,6 +174,7 @@ export const mods: Mod[] = [
     links: {
       github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Pip-Boy-Radio-Conversion",
       curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-pip-boy-radio-conversion",
+      modrinth: "https://modrinth.com/mod/dead-air-pip-boy-radio-conversion",
     },
     icon: "/images/mods/pip-boy-radio.png",
   },
@@ -186,7 +187,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Letters", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-letters" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Letters", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-letters", modrinth: "https://modrinth.com/mod/dead-letters" },
     icon: "/images/mods/dead-letters.png",
   },
   {
@@ -198,7 +199,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/NAG", curseforge: "https://www.curseforge.com/minecraft/mc-mods/nag-not-another-guidebook" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/NAG", curseforge: "https://www.curseforge.com/minecraft/mc-mods/nag-not-another-guidebook", modrinth: "https://modrinth.com/mod/nag-not-another-guidebook" },
     icon: "/images/mods/nag.png",
   },
   {
@@ -210,7 +211,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-After-Hours-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-after-hours-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-After-Hours-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-after-hours-fm", modrinth: "https://modrinth.com/mod/dead-air-after-hours-fm" },
     icon: "/images/mods/after-hours-fm.png",
   },
   {
@@ -222,7 +223,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Beat-Blocks", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-block-beats" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Beat-Blocks", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-block-beats", modrinth: "https://modrinth.com/mod/dead-air-block-beats" },
     icon: "/images/mods/beat-blocks.png",
   },
   {
@@ -234,7 +235,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Broken-Youth-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-broken-youth-radio" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Broken-Youth-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-broken-youth-radio", modrinth: "https://modrinth.com/mod/dead-air-broken-youth-radio" },
     icon: "/images/mods/broken-youth-radio.png",
   },
   {
@@ -246,7 +247,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Frontline-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-frontline-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Frontline-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-frontline-fm", modrinth: "https://modrinth.com/mod/dead-air-frontline-fm" },
     icon: "/images/mods/frontline-fm.png",
   },
   {
@@ -258,7 +259,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Iron-Rain-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-iron-rain-fm" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Iron-Rain-FM", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-iron-rain-fm", modrinth: "https://modrinth.com/mod/dead-air-iron-rain-fm" },
     icon: "/images/mods/iron-rain-fm.png",
   },
   {
@@ -270,7 +271,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Wayfarer-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-wayfarer-radio" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Wayfarer-Radio", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-wayfarer-radio", modrinth: "https://modrinth.com/mod/dead-air-wayfarer-radio" },
     icon: "/images/mods/wayfarer-radio.png",
   },
   {
@@ -282,7 +283,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Zero-Gravity", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-zero-gravity" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Dead-Air-Zero-Gravity", curseforge: "https://www.curseforge.com/minecraft/mc-mods/dead-air-zero-gravity", modrinth: "https://modrinth.com/mod/dead-air-zero-gravity" },
     icon: "/images/mods/zero-gravity.png",
   },
   {
@@ -294,7 +295,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/CTL", curseforge: "https://www.curseforge.com/minecraft/mc-mods/ctl-calm-the-leaks" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/CTL", curseforge: "https://www.curseforge.com/minecraft/mc-mods/ctl-calm-the-leaks", modrinth: "https://modrinth.com/mod/ctl-calm-the-leaks" },
     icon: "/images/mods/ctl.png",
   },
   {
@@ -306,7 +307,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Lootr-Liaison", curseforge: "https://www.curseforge.com/minecraft/mc-mods/lootr-liason" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Lootr-Liaison", curseforge: "https://www.curseforge.com/minecraft/mc-mods/lootr-liason", modrinth: "https://modrinth.com/mod/lootr-liason" },
     icon: "/images/mods/lootr-liaison.png",
   },
   {
@@ -318,7 +319,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Death-Detangler", curseforge: "https://www.curseforge.com/minecraft/mc-mods/death-detangler" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Death-Detangler", curseforge: "https://www.curseforge.com/minecraft/mc-mods/death-detangler", modrinth: "https://modrinth.com/mod/death-detangler" },
     icon: "/images/mods/death-detangler.png",
   },
   {
@@ -330,7 +331,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Explainium", curseforge: "https://www.curseforge.com/minecraft/mc-mods/explainium" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Explainium", curseforge: "https://www.curseforge.com/minecraft/mc-mods/explainium", modrinth: "https://modrinth.com/mod/explainium" },
     icon: "/images/mods/explainium.png",
   },
   {
@@ -342,7 +343,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Evil-Eye", curseforge: "https://www.curseforge.com/minecraft/mc-mods/evil-eye-evilcraft-addon" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Evil-Eye", curseforge: "https://www.curseforge.com/minecraft/mc-mods/evil-eye-evilcraft-addon", modrinth: "https://modrinth.com/mod/evil-eye-evilcraft-addon" },
     icon: "/images/mods/evil-eye.png",
   },
   {
@@ -354,7 +355,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/SuppleFix", curseforge: "https://www.curseforge.com/minecraft/mc-mods/supplefix" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/SuppleFix", curseforge: "https://www.curseforge.com/minecraft/mc-mods/supplefix", modrinth: "https://modrinth.com/mod/supplefix" },
     icon: "/images/mods/supplefix.png",
   },
   {
@@ -366,7 +367,7 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: ["1.20.1"],
     loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Not-Actually-AFK", curseforge: "https://www.curseforge.com/minecraft/mc-mods/not-actually-afk" },
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Not-Actually-AFK", curseforge: "https://www.curseforge.com/minecraft/mc-mods/not-actually-afk", modrinth: "https://modrinth.com/mod/not-actually-afk" },
     icon: "/images/mods/not-actually-afk.png",
   },
 ];
