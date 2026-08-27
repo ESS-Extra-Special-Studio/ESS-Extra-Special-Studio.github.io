@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "studio-discord",
+    date: "2026-08-27",
+    title: "Studio Discord",
+    body: "Extra Special Studio has a public Discord — modpack chat, mod help, and announcements. Same invite on CurseForge and Modrinth.",
+    href: "https://discord.gg/dhnAuhNMQH",
+  },
+  {
     id: "dead-letters-1.0.4",
     date: "2026-08-27",
     title: "Dead Letters 1.0.4",

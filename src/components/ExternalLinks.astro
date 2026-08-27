@@ -1,8 +1,14 @@
 ---
 import EswExternalLinks from "../../esw/components/EswExternalLinks.astro";
 import type { EswExternalLinks as Links } from "../../esw/types";
+import { studioDiscord } from "../data/support";
 
 const { links } = Astro.props as { links: Links };
+
+const merged: Links = {
+  ...links,
+  discord: links.discord ?? studioDiscord,
+};
 ---
 
-<EswExternalLinks links={links} />
+<EswExternalLinks links={merged} />

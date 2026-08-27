@@ -1,12 +1,14 @@
 export type ModpackStatus = "shipped" | "development" | "planned";
 
+import { studioDiscord } from "./support";
+
 export type Modpack = {
   id: string;
   name: string;
   status: ModpackStatus;
   short: string;
   long: string;
-  links: { curseforge: string; github?: string };
+  links: { curseforge: string; github?: string; discord?: string };
 };
 
 export const modpacks: Modpack[] = [
@@ -18,6 +20,7 @@ export const modpacks: Modpack[] = [
     long: "Creatopia Unbound is an Extra Special Studio Minecraft modpack. Download it from CurseForge — we do not invent extra storefronts here.",
     links: {
       curseforge: "https://www.curseforge.com/minecraft/modpacks/creatopia-unbound",
+      discord: studioDiscord,
     },
   },
   {
@@ -28,6 +31,7 @@ export const modpacks: Modpack[] = [
     long: "C.ideas is an Extra Special Studio Minecraft modpack. Download it from CurseForge.",
     links: {
       curseforge: "https://www.curseforge.com/minecraft/modpacks/c-ideas",
+      discord: studioDiscord,
     },
   },
 ];
