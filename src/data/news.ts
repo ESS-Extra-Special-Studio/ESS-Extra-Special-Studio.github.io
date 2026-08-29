@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "est-launch",
+    date: "2026-08-27",
+    title: "Extra Special Tracker (EST)",
+    body: "New studio software: local Windows app for CurseForge + Modrinth downloads, GitHub issues, and Modrinth inbox. Tokens stay encrypted on your PC.",
+    href: "/software/est",
+  },
+  {
     id: "studio-discord",
     date: "2026-08-27",
     title: "Studio Discord",

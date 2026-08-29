@@ -10,14 +10,143 @@ export function getStaticPaths() {
 
 const item = getSoftware(Astro.params.slug!);
 if (!item) throw new Error("Unknown software");
+
+const buyUrl = item.links.buy?.trim();
+const itchUrl = item.links.itch?.trim();
+const downloadUrl = item.links.download?.trim();
+const isEst = item.id === "est";
 ---
 
 <BaseLayout title={item.name} description={item.short} path={`/software/${item.id}`}>
   <p><a href="/software">← Software</a></p>
+  {
+    isEst && (
+      <img
+        class="est-logo"
+        src="/images/software/est-logo.png"
+        width="320"
+        height="90"
+        alt="E.S.T — Extra Special Tracker"
+      />
+    )
+  }
   <EswPageHeader title={item.name} lede={item.long} />
   <p>
     <span class="status">{item.status}</span>
     {item.kind ? ` · ${item.kind}` : ""}
+    {item.price ? ` · ${item.price}` : ""}
   </p>
-  <ExternalLinks links={item.links} />
+
+  {
+    isEst && (
+      <section class="purchase">
+        <h2>Get EST — free</h2>
+        <p>
+          Windows 10+ desktop app. No license key. API tokens never leave your machine except to talk to CurseForge,
+          Modrinth, and GitHub.
+        </p>
+        <div class="purchase-actions">
+          {
+            downloadUrl && (
+              <a class="btn-buy" href={downloadUrl} rel="noopener">
+                Download from GitHub Releases
+              </a>
+            )
+          }
+          {
+            itchUrl && (
+              <a class="btn-secondary" href={itchUrl} rel="noopener">
+                Also on itch.io
+              </a>
+            )
+          }
+        </div>
+        <h3>Quick start</h3>
+        <ol>
+          <li>Download and install Extra Special Tracker from GitHub Releases.</li>
+          <li>Add CurseForge Core, Modrinth, and optional GitHub tokens in Settings.</li>
+          <li>Add your projects (or import a catalog) and refresh downloads.</li>
+        </ol>
+        <p class="note">
+          Extra Special Studio is funded in part by optional ads on this website — not inside the EST app.{" "}
+          <a href="/donate">Support the studio</a> if you find EST useful.
+        </p>
+        <h3>Legal</h3>
+        <p>
+          EST stores tokens with Windows DPAPI encryption in the app data folder. We do not receive your CurseForge,
+          Modrinth, or GitHub secrets.
+        </p>
+        <p>
+          <a href="/software/est/privacy">Privacy policy</a>
+          {" · "}
+          <a href="/software/est/terms">Terms of Service (EULA)</a>
+          {" · "}
+          <a href="/privacy">Site privacy (cookies &amp; ads)</a>
+        </p>
+      </section>
+    )
+  }
+
+  <ExternalLinks
+    links={{
+      github: item.links.github,
+      docs: item.links.docs,
+      buy: buyUrl || undefined,
+      download: downloadUrl || undefined,
+      itch: itchUrl || undefined,
+    }}
+  />
 </BaseLayout>
+
+<style>
+  .est-logo {
+    display: block;
+    max-width: min(360px, 100%);
+    height: auto;
+    margin: 0.5rem 0 0.25rem;
+  }
+  .purchase {
+    margin: 1.5rem 0 2rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 6px;
+  }
+  .purchase h2,
+  .purchase h3 {
+    margin: 0 0 0.5rem;
+  }
+  .purchase h3 {
+    margin-top: 1.1rem;
+  }
+  .purchase-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+    margin: 0.85rem 0 0.5rem;
+  }
+  .btn-buy,
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.55rem 0.95rem;
+    font-weight: 650;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .btn-buy {
+    background: #f0a020;
+    color: #1a140c;
+  }
+  .btn-secondary {
+    border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+    color: inherit;
+  }
+  .note {
+    opacity: 0.85;
+    max-width: 40rem;
+  }
+  ol {
+    margin: 0.4rem 0 0;
+    padding-left: 1.2rem;
+  }
+</style>

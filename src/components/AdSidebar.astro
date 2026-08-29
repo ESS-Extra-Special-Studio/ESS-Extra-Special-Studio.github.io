@@ -1,0 +1,18 @@
+---
+import { adsConfig, adsReady } from "../data/ads";
+
+if (!adsReady()) return null;
+---
+
+<aside class="ad-rail" aria-label="Advertisement">
+  <div class="ad-rail-inner">
+    <p class="ad-rail-label">Sponsored</p>
+    <ins
+      class="adsbygoogle ad-rail-slot"
+      style="display:block"
+      data-ad-client={adsConfig.clientId}
+      data-ad-slot={adsConfig.slotId}
+      data-ad-format="auto"
+      data-full-width-responsive="false"></ins>
+  </div>
+</aside>

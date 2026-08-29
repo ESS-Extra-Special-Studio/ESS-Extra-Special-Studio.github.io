@@ -21,6 +21,9 @@ export type EswExternalLinks = {
   curseforge?: string;
   modrinth?: string;
   docs?: string;
+  /** Merchant-of-record checkout (e.g. Lemon Squeezy) */
+  buy?: string;
+  download?: string;
   spotify?: string;
   bandcamp?: string;
   youtube?: string;

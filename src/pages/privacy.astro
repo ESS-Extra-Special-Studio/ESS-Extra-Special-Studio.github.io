@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EswPageHeader from "../../esw/components/EswPageHeader.astro";
+import { studio } from "../data/studio";
+import { support } from "../data/support";
+
+const effective = "29 August 2026";
+const contactDiscord = support.discord!;
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy policy for extraspecialstudio.co.uk — cookies, optional advertising, and how Extra Special Studio handles site visitors."
+  path="/privacy"
+  showAds={false}
+>
+  <EswPageHeader
+    title="Privacy Policy"
+    lede="How extraspecialstudio.co.uk handles visitors. This site is mostly static; we do not run user accounts on the website itself."
+  />
+  <p class="meta">Effective {effective} · {studio.name}</p>
+
+  <section class="legal">
+    <h2>1. Who we are</h2>
+    <p>
+      <strong>Extra Special Studio</strong> (“we”, “us”) operates <a href={studio.canonical}>{studio.canonical.replace("https://", "")}</a>,
+      the public home for our mods, software, music, and community links.
+    </p>
+    <p>
+      Questions:{" "}
+      {contactDiscord ? (
+        <>
+          <a href={contactDiscord}>Discord</a>
+          {" · "}
+        </>
+      ) : null}
+      <a href={studio.githubOrg}>GitHub</a>
+    </p>
+
+    <h2>2. What this site collects</h2>
+    <p>
+      The studio website is a static site (GitHub Pages). We do not operate login accounts, comment systems, or a
+      first-party analytics dashboard on this domain.
+    </p>
+    <ul>
+      <li>
+        <strong>Hosting logs</strong> — GitHub Pages and your browser/CDN may log IP addresses, user agents, and requested
+        URLs as part of normal web delivery. We do not use those logs directly for marketing profiles.
+      </li>
+      <li>
+        <strong>External links</strong> — CurseForge, Modrinth, GitHub, Discord, and donation pages have their own
+        privacy policies when you leave this site.
+      </li>
+    </ul>
+
+    <h2>3. Cookies and advertising</h2>
+    <p>
+      We may show <strong>optional third-party display advertising</strong> (for example Google AdSense or a
+      developer-focused network such as EthicalAds) in a single sidebar on wide screens. Ads are <strong>not</strong>{" "}
+      shown on narrow/mobile layouts.
+    </p>
+    <ul>
+      <li>
+        Non-essential advertising cookies load only if you choose <strong>Accept</strong> on the cookie banner (UK
+        PECR / GDPR).
+      </li>
+      <li>
+        If you choose <strong>Reject non-essential</strong>, we do not load the ad network script; the site remains
+        usable without ads.
+      </li>
+      <li>
+        Ad partners may use cookies or similar tech to measure impressions and clicks. See Google’s{" "}
+        <a href="https://policies.google.com/technologies/ads" rel="noopener">Advertising policies</a> when AdSense is
+        enabled.
+      </li>
+    </ul>
+    <p>
+      Your choice is stored in <code>localStorage</code> on your device under the key{" "}
+      <code>ess-cookie-consent</code>. You can clear it in browser settings to see the banner again.
+    </p>
+
+    <h2>4. Desktop software (EST)</h2>
+    <p>
+      <strong>Extra Special Tracker (EST)</strong> is a separate Windows app with its own privacy policy. EST is
+      local-first, free, and does <strong>not</strong> include third-party advertising SDKs. The website may be
+      ad-supported; the EST app is not.
+    </p>
+    <p>
+      <a href="/software/est/privacy">EST privacy policy</a>
+    </p>
+
+    <h2>5. Children</h2>
+    <p>This site is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h2>6. Changes</h2>
+    <p>
+      We may update this policy when we add features (for example enabling an ad network). The effective date at the
+      top will change when we do.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>
+      Privacy questions about the studio site:{" "}
+      {contactDiscord ? <a href={contactDiscord}>Discord</a> : "see Help on this site"}.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .legal {
+    max-width: 42rem;
+  }
+  .legal h2 {
+    margin-top: 1.75rem;
+  }
+  .legal ul {
+    padding-left: 1.2rem;
+  }
+</style>

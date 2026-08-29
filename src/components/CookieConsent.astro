@@ -1,0 +1,69 @@
+---
+import { adsConfig, adsReady } from "../data/ads";
+
+const storageKey = "ess-cookie-consent";
+---
+
+<div id="cookie-consent" class="cookie-consent hidden" role="dialog" aria-labelledby="cookie-consent-title">
+  <div class="cookie-consent-inner wrap">
+    <p id="cookie-consent-title">
+      We use cookies for optional third-party advertising on this site (Google AdSense when enabled). Essential
+      browsing does not require consent. See our <a href="/privacy">privacy policy</a>.
+    </p>
+    <div class="cookie-consent-actions">
+      <button type="button" class="btn-cookie" data-consent="reject">Reject non-essential</button>
+      <button type="button" class="btn-cookie primary" data-consent="accept">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ storageKey, adsEnabled: adsReady(), clientId: adsConfig.clientId }}>
+  const banner = document.getElementById("cookie-consent");
+
+  function loadAdSense() {
+    if (!adsEnabled || !clientId) return;
+    if (document.querySelector('script[src*="pagead2.googlesyndication.com"]')) return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(clientId)}`;
+    s.crossOrigin = "anonymous";
+    document.head.appendChild(s);
+    s.onload = () => {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+        /* ad blockers */
+      }
+    };
+  }
+
+  function setConsent(value) {
+    try {
+      localStorage.setItem(storageKey, value);
+    } catch {
+      /* private mode */
+    }
+    banner?.classList.add("hidden");
+    if (value === "accept") loadAdSense();
+  }
+
+  const saved = (() => {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch {
+      return null;
+    }
+  })();
+
+  if (saved === "accept") {
+    loadAdSense();
+  } else if (saved !== "reject") {
+    banner?.classList.remove("hidden");
+  }
+
+  banner?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-consent]");
+    if (!btn) return;
+    setConsent(btn.getAttribute("data-consent"));
+  });
+</script>

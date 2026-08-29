@@ -1,0 +1,189 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../../esw/components/EswPageHeader.astro";
+import { studio } from "../../../data/studio";
+import { support } from "../../../data/support";
+
+const effective = "28 August 2026";
+const contactDiscord = support.discord!;
+---
+
+<BaseLayout
+  title="EST Privacy Policy"
+  description="Privacy policy for Extra Special Tracker (EST) — local-first Windows app by Extra Special Studio."
+  path="/software/est/privacy"
+  showAds={false}
+>
+  <p><a href="/software/est">← Extra Special Tracker</a></p>
+  <EswPageHeader
+    title="Extra Special Tracker — Privacy Policy"
+    lede="How EST handles your data. Short version: your API tokens and analytics stay on your PC. We do not run a cloud backend for EST."
+  />
+  <p class="meta">Effective {effective} · {studio.name}</p>
+
+  <section class="legal">
+    <h2>1. Who we are</h2>
+    <p>
+      <strong>Extra Special Studio</strong> (“we”, “us”) distributes <strong>Extra Special Tracker</strong>
+      (EST), a free local Windows desktop application. This policy covers EST and the
+      EST product page on <a href={studio.canonical}>{studio.canonical.replace("https://", "")}</a>.
+    </p>
+    <p>
+      For privacy questions about EST, contact us via our public
+      {contactDiscord ? (
+        <>
+          {" "}
+          <a href={contactDiscord}>Discord</a>
+        </>
+      ) : null}{" "}
+      or open an issue on the{" "}
+      <a href="https://github.com/ESS-Extra-Special-Studio/est">EST GitHub repository</a>.
+    </p>
+
+    <h2>2. Summary</h2>
+    <ul>
+      <li>EST is <strong>local-first</strong>. Download history, project catalog, issues, and inbox cache are stored on your computer.</li>
+      <li>
+        Your CurseForge, Modrinth, and GitHub API tokens are stored in an OS-encrypted vault (Windows DPAPI). We do
+        not receive or host those tokens on our servers.
+      </li>
+      <li>
+        When you refresh data, EST talks <strong>directly from your PC</strong> to CurseForge, Modrinth, and GitHub
+        using tokens you provide. We are not a middleman for that traffic.
+      </li>
+      <li>
+        We do <strong>not</strong> sell your personal data. EST does not include advertising or third-party analytics
+        SDKs. (Our public website may show optional ads — see the <a href="/privacy">site privacy policy</a>.)
+      </li>
+    </ul>
+
+    <h2>3. Data stored on your device</h2>
+    <p>EST may store the following locally (typically under your Windows user profile app data):</p>
+    <ul>
+      <li>API tokens (encrypted where the OS supports it)</li>
+      <li>Project catalog and profile settings</li>
+      <li>Download snapshots and derived analytics used for charts</li>
+      <li>Cached GitHub issues and Modrinth notifications (if you sync them)</li>
+      <li>Optional encrypted backup files you export yourself (`.estbak`)</li>
+    </ul>
+    <p>
+      You can delete this data by uninstalling EST and removing its app data folder, or by clearing tokens and profiles
+      inside the app.
+    </p>
+
+    <h2>4. Data that leaves your device</h2>
+    <h3>4.1 Platform APIs (you control this)</h3>
+    <p>When you use EST features, your machine may send requests to:</p>
+    <ul>
+      <li>
+        <strong>CurseForge</strong> (<code>api.curseforge.com</code>) — project download counts and related metadata,
+        using your CurseForge Core API key.
+      </li>
+      <li>
+        <strong>Modrinth</strong> (<code>api.modrinth.com</code>) — project stats, creator analytics, and notifications,
+        using your Modrinth personal access token.
+      </li>
+      <li>
+        <strong>GitHub</strong> (<code>api.github.com</code>) — repository issues for projects you configure, using an
+        optional GitHub token.
+      </li>
+    </ul>
+    <p>
+      Those services process requests under their own privacy policies. EST only sends what is needed to fetch the
+      stats and messages you asked for.
+    </p>
+    <h3>4.2 CurseForge search fallback</h3>
+    <p>
+      If the official CurseForge API cannot resolve a project slug, EST may query a public read-only proxy (
+      <code>api.curse.tools</code>) with the slug only — <strong>not</strong> your API key.
+    </p>
+    <h3>4.3 Support links</h3>
+    <p>
+      If you click Support links (website, Discord, donate), your default browser opens those pages under their own
+      policies. EST does not embed third-party advertising.
+    </p>
+    <h3>4.4 Local agent API</h3>
+    <p>
+      EST optionally exposes a <strong>localhost-only</strong> HTTP API on <code>127.0.0.1</code> (default port 8791) so
+      local tools such as Cursor can trigger refreshes. It is not reachable from other devices on your network by
+      default and does not expose raw tokens in responses.
+    </p>
+    <h3>4.5 Links you open</h3>
+    <p>
+      When you click external links (CurseForge Authors, Modrinth, GitHub Releases, etc.), your default browser opens
+      those sites under their own policies.
+    </p>
+
+    <h2>5. Website (extraspecialstudio.co.uk)</h2>
+    <p>
+      Our studio website may show optional third-party display advertising on wide screens (see the{" "}
+      <a href="/privacy">site privacy policy</a>). The EST desktop app does not show those ads.
+    </p>
+
+    <h2>6. Legal bases (UK / EEA)</h2>
+    <p>Where UK GDPR or similar law applies:</p>
+    <ul>
+      <li><strong>Legitimate interests</strong> — providing EST, improving the app, preventing abuse, and operating our website.</li>
+      <li><strong>Consent</strong> — where you choose to add API tokens and sync third-party data (you can withdraw by removing tokens).</li>
+    </ul>
+
+    <h2>7. Retention</h2>
+    <ul>
+      <li><strong>On your PC</strong> — until you delete it or uninstall EST.</li>
+      <li><strong>Support messages</strong> — retained as long as needed to resolve your request.</li>
+    </ul>
+
+    <h2>8. Your rights</h2>
+    <p>
+      Depending on where you live, you may have rights to access, correct, delete, or restrict processing of personal
+      data we hold about you (chiefly support records — not data that exists only on your PC).
+    </p>
+    <p>
+      Contact us via{" "}
+      {contactDiscord ? (
+        <a href={contactDiscord}>Discord</a>
+      ) : (
+        "our support channels"
+      )}{" "}
+      or GitHub. You may also complain to your local data protection authority.
+    </p>
+
+    <h2>9. Children</h2>
+    <p>EST is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h2>11. Changes</h2>
+    <p>
+      We may update this policy. The effective date at the top will change. Continued use of EST after an update means
+      you accept the revised policy for new processing.
+    </p>
+    <p>
+      See also: <a href="/software/est/terms">Terms of Service (EULA)</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .meta {
+    opacity: 0.75;
+    font-size: 0.9rem;
+    margin: -0.25rem 0 1.5rem;
+  }
+  .legal h2 {
+    margin: 1.75rem 0 0.5rem;
+    font-size: 1.05rem;
+  }
+  .legal h3 {
+    margin: 1.1rem 0 0.35rem;
+    font-size: 0.95rem;
+  }
+  .legal p,
+  .legal li {
+    max-width: 42rem;
+  }
+  .legal ul {
+    padding-left: 1.2rem;
+  }
+  .legal code {
+    font-size: 0.88em;
+  }
+</style>

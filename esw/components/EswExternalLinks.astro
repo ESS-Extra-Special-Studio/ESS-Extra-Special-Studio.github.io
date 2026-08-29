@@ -4,6 +4,8 @@ import type { EswExternalLinks } from "../types";
 const { links } = Astro.props as { links: EswExternalLinks };
 
 const defs: { key: keyof EswExternalLinks; label: string }[] = [
+  { key: "buy", label: "Buy license" },
+  { key: "download", label: "Download" },
   { key: "github", label: "GitHub" },
   { key: "curseforge", label: "CurseForge" },
   { key: "modrinth", label: "Modrinth" },
@@ -20,7 +22,7 @@ const defs: { key: keyof EswExternalLinks; label: string }[] = [
   { key: "email", label: "Email" },
 ];
 
-const present = defs.filter((d) => links[d.key]);
+const present = defs.filter((d) => Boolean(links[d.key]?.trim()));
 ---
 
 <div class="links">

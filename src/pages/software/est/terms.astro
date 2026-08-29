@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../../esw/components/EswPageHeader.astro";
+import { studio } from "../../../data/studio";
+import { support } from "../../../data/support";
+
+const effective = "28 August 2026";
+const contactDiscord = support.discord!;
+const privacyHref = "/software/est/privacy";
+---
+
+<BaseLayout
+  title="EST Terms of Service"
+  description="Terms of Service and EULA for Extra Special Tracker (EST) by Extra Special Studio."
+  path="/software/est/terms"
+  showAds={false}
+>
+  <p><a href="/software/est">← Extra Special Tracker</a></p>
+  <EswPageHeader
+    title="Extra Special Tracker — Terms of Service"
+    lede="End-user license agreement (EULA) for EST. By installing or using the app you agree to these terms."
+  />
+  <p class="meta">
+    Effective {effective} · {studio.name} · <a href={privacyHref}>Privacy policy</a>
+  </p>
+
+  <section class="legal">
+    <h2>1. Agreement</h2>
+    <p>
+      These Terms of Service (“Terms”) are a legal agreement between you and <strong>Extra Special Studio</strong>
+      (“we”, “us”) for <strong>Extra Special Tracker</strong> (“EST”), including any updates we provide and related
+      documentation. If you do not agree, do not install or use EST.
+    </p>
+    <p>
+      EST is <strong>free software</strong>. We may fund the studio through optional website advertising and community
+      support links — not through ads inside the EST app. See our <a href={privacyHref}>privacy policy</a> and the{" "}
+      <a href="/privacy">site privacy policy</a>.
+    </p>
+
+    <h2>2. What EST is</h2>
+    <p>
+      EST is a <strong>local Windows desktop application</strong> that helps creators track CurseForge and Modrinth
+      download statistics, GitHub issues, and Modrinth notifications using API tokens you supply. EST is not affiliated
+      with CurseForge, Modrinth, GitHub, or Microsoft.
+    </p>
+
+    <h2>3. License grant</h2>
+    <p>
+      We grant you a <strong>non-exclusive, non-transferable, revocable license</strong> to install and use EST on
+      computers you own or control, for your personal or internal studio use, at no charge.
+    </p>
+    <ul>
+      <li>You may move EST to a new PC using backup/export features, within reasonable personal use.</li>
+      <li>Development builds running unpackaged from source may behave differently but remain subject to these Terms.</li>
+    </ul>
+
+    <h2>4. Restrictions</h2>
+    <p>You must not:</p>
+    <ul>
+      <li>Redistribute, rent, lease, sublicense, or resell EST except where applicable law gives you a non-waivable right to do so.</li>
+      <li>Reverse engineer or modify EST except where applicable law gives you a non-waivable right to do so.</li>
+      <li>Use EST to violate third-party terms (CurseForge, Modrinth, GitHub, etc.) or applicable law.</li>
+      <li>Remove or obscure copyright or attribution notices.</li>
+      <li>Attempt to bypass security or abuse the localhost agent API on shared machines without appropriate access controls.</li>
+    </ul>
+
+    <h2>5. Your API tokens and data</h2>
+    <p>
+      You are responsible for obtaining and safeguarding your CurseForge, Modrinth, and GitHub credentials. EST stores
+      them locally on your device. We do not host your tokens. You are responsible for the accuracy of project slugs,
+      catalogs, and any data you export or back up.
+    </p>
+
+    <h2>6. Third-party services</h2>
+    <p>
+      EST calls third-party APIs at your direction. We do not guarantee those services will remain available, unchanged,
+      or error-free. Download history for CurseForge is derived from snapshots EST takes over time — we do not provide
+      official CurseForge historical analytics.
+    </p>
+
+    <h2>7. Updates and support</h2>
+    <p>
+      We may release updates at our discretion. Support is provided on a reasonable-efforts basis via our public
+      {contactDiscord ? (
+        <>
+          {" "}
+          <a href={contactDiscord}>Discord</a>
+        </>
+      ) : null}{" "}
+      and the <a href="https://github.com/ESS-Extra-Special-Studio/est">EST GitHub repository</a>. We are not obliged
+      to provide a specific response time unless required by consumer law.
+    </p>
+
+    <h2>8. Donations and website support</h2>
+    <p>
+      EST is free. Optional donations or purchases on our website (for example via a donate page) are separate from EST
+      itself and governed by the relevant platform’s terms. They do not entitle you to a different EST license tier.
+    </p>
+
+    <h2>9. Disclaimer</h2>
+    <p>
+      EST is provided <strong>“as is” and “as available”</strong> without warranties of any kind, whether express or
+      implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not warrant
+      that EST will be uninterrupted, error-free, or that analytics will match platform dashboards exactly.
+    </p>
+
+    <h2>10. Limitation of liability</h2>
+    <p>
+      To the maximum extent permitted by law, Extra Special Studio will not be liable for any indirect, incidental,
+      special, consequential, or punitive damages, or for loss of profits, data, or goodwill, arising from your use
+      of EST. Because EST is provided at no charge, our total liability for any claim relating to EST is limited to
+      GBP £10 unless applicable law requires otherwise.
+    </p>
+    <p>
+      Nothing in these Terms limits liability that cannot be limited under applicable law (including death or personal
+      injury caused by negligence, or fraud).
+    </p>
+
+    <h2>11. Termination</h2>
+    <p>
+      You may stop using EST at any time by uninstalling it. We may suspend or revoke a license if you materially
+      breach these Terms (for example, key sharing or redistribution). On termination, your license ends and you must
+      stop using EST, except for data you already exported locally.
+    </p>
+
+    <h2>12. Intellectual property</h2>
+    <p>
+      EST, its name, branding, and source code (where not open-sourced separately) remain the property of Extra Special
+      Studio and its licensors. This agreement does not transfer ownership to you — only the limited license in section
+      3.
+    </p>
+
+    <h2>13. Governing law</h2>
+    <p>
+      These Terms are governed by the laws of <strong>England and Wales</strong>, without regard to conflict-of-law
+      rules. Courts in England and Wales have exclusive jurisdiction, except where mandatory consumer protection law in
+      your country gives you the right to bring claims in your local courts.
+    </p>
+
+    <h2>14. Changes</h2>
+    <p>
+      We may update these Terms. The effective date at the top will change. Material changes will be posted on this
+      page. Continued use of EST after an update constitutes acceptance of the revised Terms for future use.
+    </p>
+
+    <h2>15. Contact</h2>
+    <p>
+      Questions about these Terms:
+      {contactDiscord ? (
+        <a href={contactDiscord}>Discord</a>
+      ) : (
+        " our support channels"
+      )}{" "}
+      or GitHub issues on the EST repository.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .meta {
+    opacity: 0.75;
+    font-size: 0.9rem;
+    margin: -0.25rem 0 1.5rem;
+  }
+  .legal h2 {
+    margin: 1.75rem 0 0.5rem;
+    font-size: 1.05rem;
+  }
+  .legal h3 {
+    margin: 1.1rem 0 0.35rem;
+    font-size: 0.95rem;
+  }
+  .legal p,
+  .legal li {
+    max-width: 42rem;
+  }
+  .legal ul {
+    padding-left: 1.2rem;
+  }
+  .legal code {
+    font-size: 0.88em;
+  }
+</style>
