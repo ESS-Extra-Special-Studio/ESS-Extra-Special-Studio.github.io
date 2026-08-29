@@ -39,9 +39,9 @@ export const software: SoftwareProduct[] = [
     kind: "Desktop studio analytics",
     price: "Free",
     short:
-      "Local Windows app for CurseForge + Modrinth downloads, GitHub issues, and Modrinth creator inbox. Your API tokens stay encrypted on your PC.",
+      "Local desktop app (Windows, Linux, macOS) for CurseForge + Modrinth downloads, GitHub issues, and Modrinth creator inbox. API tokens stay encrypted on your PC.",
     long:
-      "EST (Extra Special Tracker) is Extra Special Studio’s free desktop tool for mod authors and small studios. Track CurseForge and Modrinth download totals over time, sync GitHub issues, and pull Modrinth notifications into one Inbox. CurseForge private messages are opened via the official Authors console (no public PM API). Tokens are stored with OS encryption (Windows DPAPI). Download from GitHub Releases — no license key required.",
+      "EST (Extra Special Tracker) is Extra Special Studio’s free cross-platform desktop tool for mod authors and small studios. Track CurseForge and Modrinth download totals over time, sync GitHub issues, and pull Modrinth notifications into one Inbox. CurseForge private messages are opened via the official Authors console (no public PM API). Tokens use OS encryption (DPAPI / Keychain / libsecret). Download from GitHub Releases — Windows installer, Linux AppImage or .deb, macOS .dmg — no license key required.",
     links: {
       github: "https://github.com/ESS-Extra-Special-Studio/est",
       docs: "https://extraspecialstudio.co.uk/software/est",
