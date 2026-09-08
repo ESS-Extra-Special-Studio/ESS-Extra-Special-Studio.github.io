@@ -3,6 +3,7 @@ export type SoftwareStatus = "development" | "planned" | "released";
 export type SoftwareProduct = {
   id: string;
   name: string;
+  version?: string;
   status: SoftwareStatus;
   short: string;
   long: string;
@@ -35,6 +36,7 @@ export const software: SoftwareProduct[] = [
   {
     id: "est",
     name: "Extra Special Tracker (EST)",
+    version: "0.1.3",
     status: "released",
     kind: "Desktop studio analytics",
     price: "Free",

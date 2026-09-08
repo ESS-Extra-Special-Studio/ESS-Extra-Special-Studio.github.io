@@ -33,6 +33,7 @@ const isEst = item.id === "est";
   <EswPageHeader title={item.name} lede={item.long} />
   <p>
     <span class="status">{item.status}</span>
+    {item.version ? ` · v${item.version}` : ""}
     {item.kind ? ` · ${item.kind}` : ""}
     {item.price ? ` · ${item.price}` : ""}
   </p>
