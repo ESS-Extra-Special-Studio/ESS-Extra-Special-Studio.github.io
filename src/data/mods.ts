@@ -48,9 +48,12 @@ export const mods: Mod[] = [
     status: "development",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
-    links: {},
+    links: {
+      github: "https://github.com/ESS-Extra-Special-Studio/ESN",
+      curseforge: "https://www.curseforge.com/minecraft/mc-mods/esn-extra-special-network",
+    },
     icon: "/images/mods/esn.png",
-    stackNote: "Networking half of ESL + ESN. Optional for features that do not need multiplayer fan-out; not on CurseForge/Modrinth yet.",
+    stackNote: "Networking half of ESL + ESN. Optional for features that do not need multiplayer fan-out. Awaiting CF moderation approval for public visibility.",
   },
   {
     id: "esc",
