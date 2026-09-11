@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "esn-framework",
+    date: "2026-09-11",
+    title: "Extra Special Network (ESN)",
+    body: "ESN joins the Extra Special stack as the reusable multiplayer networking fabric — channels, packets, and fan-out with no feature types. Pair with ESL for sessions. First reference: Radio Towers airdrop lobby.",
+    href: "/mods/esn",
+  },
+  {
     id: "est-launch",
     date: "2026-08-27",
     title: "Extra Special Tracker (EST)",
@@ -53,7 +60,7 @@ export const news: NewsItem[] = [
     id: "stack-wave",
     date: "2026-08-20",
     title: "Extra Special hub stack",
-    body: "ESL, ESC, and ESH are the shipped stack layers. ESG is still in development. ESB is planned, not released.",
+    body: "ESL, ESC, and ESH are the shipped hub layers. ESN is the networking fabric in development. ESG is still in development. ESB is planned, not released.",
     href: "/mods",
   },
 ];

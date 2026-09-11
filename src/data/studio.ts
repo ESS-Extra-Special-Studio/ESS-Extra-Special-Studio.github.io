@@ -4,7 +4,7 @@ export const studio = {
   name: "Extra Special Studio",
   tagline: "Independent development across games, mods, modpacks, music and technology.",
   intro:
-    "Extra Special Studio is an independent creative studio. Minecraft mods and modpacks are one pillar. Music (Parallel Horizons) sits beside them. Software — Extra Special Web and other tools — is how we reuse what we build. Technology in Minecraft (ESL, ESC, ESH) stays on Mods.",
+    "Extra Special Studio is an independent creative studio. Minecraft mods and modpacks are one pillar. Music (Parallel Horizons) sits beside them. Software — Extra Special Web and other tools — is how we reuse what we build. Technology in Minecraft (ESL, ESN, ESC, ESH) stays on Mods.",
   about:
     "We ship Extra Special Minecraft mods from the Extra Special Studio GitHub organisation, and modpacks (Creatopia Unbound, C.ideas) on CurseForge. Extra Special Web (ESW) and Extra Special Tracker (EST) are software, not Minecraft mods. Community chat lives on our public Discord; Radio Towers is a companion to Dead Air, not an Extra Special Studio mod.",
   githubOrg: "https://github.com/ESS-Extra-Special-Studio",
@@ -27,6 +27,6 @@ export const timeline: TimelineItem[] = [
   {
     year: "2026",
     title: "Extra Special stack",
-    body: "ESL, ESC, and ESH shipped as the hub stack. ESG remains in development. ESB is planned.",
+    body: "ESL, ESC, and ESH shipped as the hub stack. ESN (networking fabric) is in development alongside ESL as the reusable multiplayer layer. ESG remains in development. ESB is planned.",
   },
 ];
