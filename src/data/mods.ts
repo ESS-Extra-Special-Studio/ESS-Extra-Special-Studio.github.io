@@ -45,7 +45,7 @@ export const mods: Mod[] = [
     short: "Reusable multiplayer networking fabric for Extra Special mods.",
     long: "ESN is the networking half of Extra Special’s multiplayer framework: channels, packets, targeted delivery, and group fan-out. It has no lobby, wave, airdrop, or HUD types — consumer mods supply meaning. Pair with ESL for sessions. First reference consumer: Radio Towers airdrop lobby.",
     ecosystem: "ess",
-    status: "development",
+    status: "shipped",
     mcVersions: ["1.20.1", "1.21.1"],
     loaders: ["Forge", "NeoForge"],
     links: {
@@ -53,7 +53,7 @@ export const mods: Mod[] = [
       curseforge: "https://www.curseforge.com/minecraft/mc-mods/esn-extra-special-network",
     },
     icon: "/images/mods/esn.png",
-    stackNote: "Networking half of ESL + ESN. Optional for features that do not need multiplayer fan-out. Awaiting CF moderation approval for public visibility.",
+    stackNote: "Networking half of ESL + ESN. Optional for features that do not need multiplayer fan-out.",
   },
   {
     id: "esc",
@@ -169,7 +169,7 @@ export const mods: Mod[] = [
     id: "radio-towers",
     name: "Radio Towers",
     short: "Companion world content for Dead Air. Not an Extra Special Studio mod.",
-    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. It is a companion, not an Extra Special Studio mod.",
+    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. Optional airdrop lobby (invite, ready, then Go) uses ESL sessions and ESN packets; solo lever calls stay as they were. It is a companion, not an Extra Special Studio mod.",
     ecosystem: "dead-air",
     status: "companion",
     mcVersions: ["1.20.1", "1.21.1"],

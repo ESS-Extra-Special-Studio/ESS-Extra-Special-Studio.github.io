@@ -8,6 +8,34 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "airdrop-lobby",
+    date: "2026-09-13",
+    title: "Airdrop lobby",
+    body: "Radio Towers 1.2.4 adds an optional shared-server lobby: invite, ready, countdown, then Go. Solo lever calls are unchanged. Lobbied crates are members-only. ESL 1.1.0 holds the session. ESN carries the packets and is optional — without it, solo still works.",
+    href: "/mods/radio-towers",
+  },
+  {
+    id: "esl-1.1.0",
+    date: "2026-09-13",
+    title: "ESL 1.1.0",
+    body: "Lobby sessions are now part of Extra Special Lib: reusable server-side parties with no packets or GUI. Forge 1.20.1 and NeoForge 1.21.1. First consumer is the Radio Towers airdrop lobby.",
+    href: "/mods/esl",
+  },
+  {
+    id: "esn-1.0.1",
+    date: "2026-09-13",
+    title: "ESN 1.0.1",
+    body: "Extra Special Network is public on CurseForge for Forge 1.20.1 and NeoForge 1.21.1. 1.0.1 does not change the packet API. Lobby sessions stay in ESL.",
+    href: "/mods/esn",
+  },
+  {
+    id: "dead-air-2.1.5",
+    date: "2026-09-13",
+    title: "Dead Air 2.1.5",
+    body: "Forge 1.20.1 no longer fails to launch from an unused item mixin. NeoForge 1.21.1 is version-matched. Both are on CurseForge and GitHub.",
+    href: "/mods/dead-air",
+  },
+  {
     id: "esn-framework",
     date: "2026-09-11",
     title: "Extra Special Network (ESN)",

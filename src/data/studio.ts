@@ -27,6 +27,6 @@ export const timeline: TimelineItem[] = [
   {
     year: "2026",
     title: "Extra Special stack",
-    body: "ESL, ESC, and ESH shipped as the hub stack. ESN (networking fabric) is in development alongside ESL as the reusable multiplayer layer. ESG remains in development. ESB is planned.",
+    body: "ESL, ESC, ESH, and ESN shipped. ESL and ESN are the reusable multiplayer layer (sessions and packets). ESG remains in development. ESB is planned.",
   },
 ];
