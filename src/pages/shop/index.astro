@@ -32,7 +32,7 @@ import { shop } from "../../data/shop";
   };
 
   async function load(handle) {
-    const response = await fetch(`${origin}/collections/${handle}/products.json?limit=50`);
+    const response = await fetch(`${origin}/collections/${handle}/products.json?limit=250`);
     if (!response.ok) throw new Error(String(response.status));
     const body = await response.json();
     return Array.isArray(body.products) ? body.products : [];
@@ -60,19 +60,23 @@ import { shop } from "../../data/shop";
     return link;
   }
 
-  for (const handle of collections) {
-    const section = document.querySelector(`[data-collection="${handle}"]`);
-    const grid = section?.querySelector(".shop-grid");
-    if (!section || !grid) continue;
-    try {
-      const products = await load(handle);
-      grid.replaceChildren(...products.map(card));
-      if (!products.length) grid.textContent = "Nothing in this collection yet.";
-    } catch {
-      grid.textContent = "The catalogue could not load. The till is still open.";
+  async function fill() {
+    for (const handle of collections) {
+      const section = document.querySelector(`[data-collection="${handle}"]`);
+      const grid = section?.querySelector(".shop-grid");
+      if (!section || !grid) continue;
+      try {
+        const products = await load(handle);
+        grid.replaceChildren(...products.map(card));
+        if (!products.length) grid.textContent = "Nothing in this collection yet.";
+      } catch {
+        grid.textContent = "The catalogue could not load. The till is still open.";
+      }
+      section.setAttribute("aria-busy", "false");
     }
-    section.setAttribute("aria-busy", "false");
   }
+
+  fill();
 </script>
 
 <style>
