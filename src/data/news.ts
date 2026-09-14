@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "studio-prints-shop",
+    date: "2026-09-15",
+    title: "Studio prints on the site",
+    body: "The Extra Special Studio shop is live on the site: quiet prints, pillows, throws, and small goods, printed to order. Browse by theme — vintage geometric, calm home, under £10 — then pay on the till.",
+    href: "/shop",
+  },
+  {
     id: "airdrop-lobby",
     date: "2026-09-13",
     title: "Airdrop lobby",

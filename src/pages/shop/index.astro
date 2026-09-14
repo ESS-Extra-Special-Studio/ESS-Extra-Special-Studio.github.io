@@ -2,17 +2,52 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
 import { shop } from "../../data/shop";
+
+const browse = shop.collections.filter((row) => !row.featured);
+const featured = shop.collections.find((row) => row.featured);
 ---
 
 <BaseLayout
   title="Shop"
-  description="Prints and goods from Extra Special Studio. Printed to order."
+  description="Prints and goods from Extra Special Studio. Printed to order — quiet originals, no filler catalogue."
   path="/shop"
 >
   <EswPageHeader title="Shop" lede={shop.blurb} />
-  <p><a class="btn" href={shop.origin}>Open the till</a></p>
+  <p class="actions">
+    <a class="btn" href={shop.origin}>Open the till</a>
+    <a class="btn ghost" href="/shop/vintage-geometric">Vintage geometric</a>
+    <a class="btn ghost" href="/shop/calm-home">Calm home</a>
+    <a class="btn ghost" href="/shop/under-10">Under £10</a>
+  </p>
+
   {
-    shop.collections.map((collection) => (
+    featured && (
+      <section data-collection={featured.handle} data-limit={featured.limit || 8} data-sort="newest" aria-busy="true">
+        <h2 class="section-title">{featured.title}</h2>
+        <p class="lede">{featured.note}</p>
+        <div class="grid shop-grid">
+          <p class="muted">Loading the live catalogue…</p>
+        </div>
+      </section>
+    )
+  }
+
+  <nav class="theme-nav" aria-label="Shop themes">
+    <h2 class="section-title">Browse by feel</h2>
+    <div class="grid theme-grid">
+      {
+        shop.themes.map((theme) => (
+          <a class="card" href={`/shop/${theme.slug}`}>
+            <h3>{theme.title}</h3>
+            <p>{theme.lede}</p>
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+
+  {
+    browse.map((collection) => (
       <section data-collection={collection.handle} aria-busy="true">
         <h2 class="section-title">{collection.title}</h2>
         <p class="lede">{collection.note}</p>
@@ -24,7 +59,7 @@ import { shop } from "../../data/shop";
   }
 </BaseLayout>
 
-<script define:vars={{ origin: shop.origin, collections: shop.collections.map((row) => row.handle) }}>
+<script define:vars={{ origin: shop.origin }}>
   const money = (value) => {
     const amount = Number(value);
     if (!Number.isFinite(amount)) return "";
@@ -60,26 +95,50 @@ import { shop } from "../../data/shop";
     return link;
   }
 
-  async function fill() {
-    for (const handle of collections) {
-      const section = document.querySelector(`[data-collection="${handle}"]`);
-      const grid = section?.querySelector(".shop-grid");
-      if (!section || !grid) continue;
-      try {
-        const products = await load(handle);
-        grid.replaceChildren(...products.map(card));
-        if (!products.length) grid.textContent = "Nothing in this collection yet.";
-      } catch {
-        grid.textContent = "The catalogue could not load. The till is still open.";
+  async function fillSection(section) {
+    const handle = section.getAttribute("data-collection");
+    const grid = section.querySelector(".shop-grid");
+    if (!handle || !grid) return;
+    try {
+      let products = await load(handle);
+      if (section.getAttribute("data-sort") === "newest") {
+        products = [...products].sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")));
       }
-      section.setAttribute("aria-busy", "false");
+      const limit = Number(section.getAttribute("data-limit") || 0);
+      if (limit > 0) products = products.slice(0, limit);
+      grid.replaceChildren(...products.map(card));
+      if (!products.length) grid.textContent = "Nothing in this collection yet.";
+    } catch {
+      grid.textContent = "The catalogue could not load. The till is still open.";
     }
+    section.setAttribute("aria-busy", "false");
   }
 
-  fill();
+  document.querySelectorAll("[data-collection]").forEach((section) => fillSection(section));
 </script>
 
 <style>
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .btn.ghost {
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--text) 22%, transparent);
+  }
+  .theme-nav {
+    margin: 2rem 0 2.5rem;
+  }
+  .theme-grid h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  .theme-grid p {
+    margin: 0;
+    color: var(--muted);
+  }
   .shop-card {
     display: flex;
     flex-direction: column;

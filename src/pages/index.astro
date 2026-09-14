@@ -48,8 +48,93 @@ const openPolls = getOpenPolls();
     </a>
   </section>
 
+  <section class="home-shop" aria-label="Studio prints">
+    <h2 class="section-title">Studio prints</h2>
+    <p class="lede">Quiet prints and goods, printed to order. No ads — just the catalogue on the studio site.</p>
+    <div class="grid shop-home-grid" id="home-shop-grid" aria-busy="true">
+      <p class="muted">Loading a few live pieces…</p>
+    </div>
+    <p><a class="btn" href="/shop">Browse the shop</a></p>
+  </section>
+
   <h2 class="section-title">Latest</h2>
   <EswNewsList items={news} />
+
+  <script define:vars={{ origin: "https://ga0jn9-gj.myshopify.com" }}>
+    const money = (value) => {
+      const amount = Number(value);
+      if (!Number.isFinite(amount)) return "";
+      return `£${amount.toFixed(2)}`;
+    };
+    const grid = document.getElementById("home-shop-grid");
+    if (grid) {
+      fetch(`${origin}/collections/all/products.json?limit=250`)
+        .then((res) => res.json())
+        .then((body) => {
+          const products = (body.products || [])
+            .slice()
+            .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))
+            .slice(0, 4);
+          grid.replaceChildren(
+            ...products.map((product) => {
+              const link = document.createElement("a");
+              link.className = "card shop-card";
+              link.href = `${origin}/products/${product.handle}`;
+              const image = product.images?.[0]?.src;
+              if (image) {
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = "";
+                img.width = 480;
+                img.height = 480;
+                link.append(img);
+              }
+              const title = document.createElement("h3");
+              title.textContent = product.title || "Print";
+              const price = document.createElement("p");
+              price.className = "price";
+              price.textContent = money(product.variants?.[0]?.price);
+              link.append(title, price);
+              return link;
+            })
+          );
+          if (!products.length) grid.textContent = "The shop catalogue is warming up.";
+        })
+        .catch(() => {
+          grid.innerHTML = '<p class="muted">Browse the <a href="/shop">shop</a> for live prints.</p>';
+        })
+        .finally(() => grid.setAttribute("aria-busy", "false"));
+    }
+  </script>
+
+  <style>
+    .home-shop {
+      margin: 2rem 0 2.5rem;
+    }
+    .shop-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      color: inherit;
+      text-decoration: none;
+    }
+    .shop-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--bg-elev);
+    }
+    .shop-card h3 {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .price,
+    .muted {
+      color: var(--muted);
+      margin: 0;
+    }
+  </style>
 
   {openPolls.length > 0 && (
     <section class="community-votes" aria-label="Community votes">
