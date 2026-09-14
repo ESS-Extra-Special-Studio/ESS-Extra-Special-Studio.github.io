@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
+import { shop } from "../../data/shop";
+---
+
+<BaseLayout
+  title="Shop"
+  description="Prints and goods from Extra Special Studio. Printed to order."
+  path="/shop"
+>
+  <EswPageHeader title="Shop" lede={shop.blurb} />
+  <p><a class="btn" href={shop.origin}>Open the till</a></p>
+  {
+    shop.collections.map((collection) => (
+      <section data-collection={collection.handle} aria-busy="true">
+        <h2 class="section-title">{collection.title}</h2>
+        <p class="lede">{collection.note}</p>
+        <div class="grid shop-grid">
+          <p class="muted">Loading the live catalogue…</p>
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>
+
+<script define:vars={{ origin: shop.origin, collections: shop.collections.map((row) => row.handle) }}>
+  const money = (value) => {
+    const amount = Number(value);
+    if (!Number.isFinite(amount)) return "";
+    return `£${amount.toFixed(2)}`;
+  };
+
+  async function load(handle) {
+    const response = await fetch(`${origin}/collections/${handle}/products.json?limit=50`);
+    if (!response.ok) throw new Error(String(response.status));
+    const body = await response.json();
+    return Array.isArray(body.products) ? body.products : [];
+  }
+
+  function card(product) {
+    const link = document.createElement("a");
+    link.className = "card shop-card";
+    link.href = `${origin}/products/${product.handle}`;
+    const image = product.images?.[0]?.src;
+    if (image) {
+      const img = document.createElement("img");
+      img.src = image;
+      img.alt = "";
+      img.width = 480;
+      img.height = 480;
+      link.append(img);
+    }
+    const title = document.createElement("h3");
+    title.textContent = product.title || "Print";
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = money(product.variants?.[0]?.price);
+    link.append(title, price);
+    return link;
+  }
+
+  for (const handle of collections) {
+    const section = document.querySelector(`[data-collection="${handle}"]`);
+    const grid = section?.querySelector(".shop-grid");
+    if (!section || !grid) continue;
+    try {
+      const products = await load(handle);
+      grid.replaceChildren(...products.map(card));
+      if (!products.length) grid.textContent = "Nothing in this collection yet.";
+    } catch {
+      grid.textContent = "The catalogue could not load. The till is still open.";
+    }
+    section.setAttribute("aria-busy", "false");
+  }
+</script>
+
+<style>
+  .shop-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .shop-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--bg-elev);
+  }
+  .shop-card h3 {
+    font-size: 1rem;
+  }
+  .price,
+  .muted {
+    color: var(--muted);
+    margin: 0;
+  }
+</style>
