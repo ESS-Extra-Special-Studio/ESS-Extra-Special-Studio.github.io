@@ -349,9 +349,9 @@ export const mods: Mod[] = [
     long: "Lootr Liaison is a standalone Extra Special mod. It does not consume Extra Special Hub.",
     ecosystem: "other",
     status: "shipped",
-    mcVersions: ["1.20.1"],
-    loaders: ["Forge"],
-    links: { github: "https://github.com/ESS-Extra-Special-Studio/Lootr-Liaison", curseforge: "https://www.curseforge.com/minecraft/mc-mods/lootr-liason", modrinth: "https://modrinth.com/mod/lootr-liason" },
+    mcVersions: ["1.20.1", "1.21.1"],
+    loaders: ["Forge", "NeoForge"],
+    links: { github: "https://github.com/ESS-Extra-Special-Studio/Lootr-Liaison", curseforge: "https://www.curseforge.com/minecraft/mc-mods/lootr-liaison", modrinth: "https://modrinth.com/mod/lootr-liason" },
     icon: "/images/mods/lootr-liaison.png",
   },
   {
