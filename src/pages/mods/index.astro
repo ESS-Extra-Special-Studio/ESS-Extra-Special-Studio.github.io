@@ -6,22 +6,23 @@ import EswPageHeader from "../../../esw/components/EswPageHeader.astro";
 import {
   ecosystemLabels,
   gameLabels,
+  gameNotes,
   gameOrder,
   modsByEcosystem,
   type Ecosystem,
 } from "../../data/mods";
 
-const ecosystems: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
+const ecosystems: Ecosystem[] = ["ess", "pantheon", "dead-air", "other", "ashenfall"];
 ---
 
 <BaseLayout
   title="Mods"
-  description="Extra Special Studio mods, grouped by game. Minecraft first; other games when we ship them."
+  description="Extra Special Studio mods, grouped by game: Minecraft, and Skills of Ashenfall for RuneScape: Dragonwilds."
   path="/mods"
 >
   <EswPageHeader
     title="Mods"
-    lede="Grouped by game. Minecraft is here now. Another game gets its own heading on this page when we actually ship mods for it. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod."
+    lede="Grouped by game. Minecraft first, then RuneScape: Dragonwilds, where Skills of Ashenfall adds new skills to the game. Status is honest: ESG is in development, ESB is planned. Radio Towers is a companion to Dead Air, not an Extra Special Studio mod."
   />
   <p class="lede">
     Soft merch lives on the studio <a href="/shop">Shop</a> — quiet prints and goods, separate from the mod downloads.
@@ -36,6 +37,7 @@ const ecosystems: Ecosystem[] = ["ess", "pantheon", "dead-air", "other"];
         <section class="game-block">
           <h2 class="game-title">{gameLabels[game]}</h2>
           {game === "minecraft" && <StackDiagram />}
+          {gameNotes[game] && <p class="lede">{gameNotes[game]}</p>}
           {groups.map(({ eco, items }) => (
             <section>
               <h3 class="section-title">{ecosystemLabels[eco]}</h3>

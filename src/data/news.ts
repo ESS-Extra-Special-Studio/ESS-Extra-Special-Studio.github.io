@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "skills-of-ashenfall-1.0.0",
+    date: "2026-10-07",
+    title: "Skills of Ashenfall for Dragonwilds",
+    body: "Our first RuneScape: Dragonwilds mods are out. Historian 1.0.0 is the first original custom skill in Dragonwilds: levels 1 to 25, trained by collecting lore scraps, journals and place records. Horticulture 1.0.0 opens at Historian 25 and Farming 25 and lets you graft cuttings onto crops and trees, so yes, you can grow potatoes in an ash tree. Both run on ESL:DragonWilds 1.0.0, which also adds an Action Wheel (hold Z).",
+    href: "/mods/historian",
+  },
+  {
     id: "studio-prints-shop",
     date: "2026-09-15",
     title: "Studio prints on the site",

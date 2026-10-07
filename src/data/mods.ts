@@ -1,5 +1,5 @@
-export type GameId = "minecraft";
-export type Ecosystem = "ess" | "pantheon" | "dead-air" | "other";
+export type GameId = "minecraft" | "dragonwilds";
+export type Ecosystem = "ess" | "pantheon" | "dead-air" | "other" | "ashenfall";
 export type ModStatus = "shipped" | "development" | "planned" | "companion";
 
 export type ExternalLinks = {
@@ -23,6 +23,18 @@ export type Mod = {
   icon?: string;
   pixelIcon?: boolean;
   stackNote?: string;
+  details?: string[];
+  screenshots?: { src: string; alt: string }[];
+};
+
+/**
+ * TODO: CurseForge URLs for the Dragonwilds mods. The project pages were not public yet when these mods were added.
+ * Paste each real URL here once confirmed. Empty values are not shown on the site.
+ */
+const dragonwildsCurseForge = {
+  "esl-dragonwilds": "",
+  historian: "",
+  horticulture: "",
 };
 
 export const mods: Mod[] = [
@@ -414,20 +426,100 @@ export const mods: Mod[] = [
     links: { github: "https://github.com/ESS-Extra-Special-Studio/Not-Actually-AFK", curseforge: "https://www.curseforge.com/minecraft/mc-mods/not-actually-afk", modrinth: "https://modrinth.com/mod/not-actually-afk" },
     icon: "/images/mods/not-actually-afk.png",
   },
+  {
+    id: "esl-dragonwilds",
+    name: "ESL:DragonWilds",
+    short: "The library our Dragonwilds skill mods run on, plus one Action Wheel for every mod.",
+    long: "ESL:DragonWilds is what lets a modded skill sit in Dragonwilds like it was always there: on the character select grid, in the skills menu with its own panel and perks, and in your total level. On its own it doesn't do much apart from the Action Wheel. If one of our skill mods lists it, you need it.",
+    game: "dragonwilds",
+    ecosystem: "ashenfall",
+    status: "shipped",
+    mcVersions: [],
+    loaders: ["UE4SS"],
+    links: { curseforge: dragonwildsCurseForge["esl-dragonwilds"] },
+    icon: "/images/mods/esl-dragonwilds.png",
+    stackNote: "Needs UE4SS 3.0.1 for Dragonwilds. Not the same mod as ESL for Minecraft.",
+    details: [
+      "Look at something and hold Z. Any actions mods have for it show up on one wheel, so you're not juggling a pile of keybinds. Greyed-out actions tell you why, like \"Needs Farming 15\". You can change the key, size and colours, or switch the wheel off, in its config file.",
+      "Skill progress is saved per character in its own folder, so updating a mod won't wipe it. ESL only reads vanilla levels from your save and never writes to the game's own save files.",
+      "Making your own mod? ESL has a Lua API for registering skills, giving XP, adding perks and putting your own options on the wheel.",
+    ],
+  },
+  {
+    id: "historian",
+    name: "Skills of Ashenfall: Historian",
+    short: "The first original custom skill in Dragonwilds. Levels 1 to 25, trained by finding the history Ashenfall's people left lying around.",
+    long: "You've been picking up lore scraps the whole time. Now they count. Historian is a new skill, levels 1 to 25, and every lore scrap, journal and place record your journal files pays Historian XP. It shows up like any vanilla skill: on character select, in your total level, and with its own tile, panel and perks in the skills menu.",
+    game: "dragonwilds",
+    ecosystem: "ashenfall",
+    status: "shipped",
+    mcVersions: [],
+    loaders: ["UE4SS"],
+    links: {
+      github: "https://github.com/ESS-Extra-Special-Studio/Skills-of-Ashenfall-Historian",
+      curseforge: dragonwildsCurseForge.historian,
+    },
+    icon: "/images/mods/historian.png",
+    stackNote: "Needs UE4SS 3.0.1 for Dragonwilds and ESL:DragonWilds 1.0.0 or later.",
+    details: [
+      "Bramblemead Valley has 20 history entries, and each one pays once, in whatever order you find them. There are four sets to finish and four pairs of pages that answer each other, and both pay a bonus. Once you've got 18 of the 20, a card sends you to the ruins of Bramblemead village to piece it all together, which takes you to level 25.",
+      "There's a perk at every level from 2 to 25. Most are a small bump to Historian XP. A few named ones, like Footnotes and He Said, She Said, help you work out what you're still missing.",
+      "Press F7 for the ledger: your level and XP, what you've filed, how each set is going and what to look for next. Already got a character? Historian credits you for everything your journal already holds.",
+      "It stops at 25 for now, with the starting valley done. Later versions take it further as more of Ashenfall opens up.",
+    ],
+    screenshots: [
+      { src: "/images/mods/screens/historian-skills-detail.jpg", alt: "Historian at level 12 in the skills menu, with its panel and perk list" },
+      { src: "/images/mods/screens/historian-ledger-f7.jpg", alt: "The F7 Historian ledger showing records filed, sets and what to find next" },
+      { src: "/images/mods/screens/historian-character-select.jpg", alt: "Historian 12 of 25 on the character select skill grid" },
+    ],
+  },
+  {
+    id: "horticulture",
+    name: "Skills of Ashenfall: Horticulture",
+    short: "The second Skills of Ashenfall skill. Graft cuttings onto your crops and trees and see what's there at dawn.",
+    long: "Take a cutting from one plant, graft it onto something you grew, and see what's there at dawn. Maybe an ash tree full of potatoes. Maybe an oak with cabbages in it. Horticulture is a new skill, levels 1 to 25, and you have to earn it first.",
+    game: "dragonwilds",
+    ecosystem: "ashenfall",
+    status: "shipped",
+    mcVersions: [],
+    loaders: ["UE4SS"],
+    links: { curseforge: dragonwildsCurseForge.horticulture },
+    icon: "/images/mods/horticulture.png",
+    stackNote: "Needs UE4SS 3.0.1 for Dragonwilds, ESL:DragonWilds 1.0.0 and Skills of Ashenfall: Historian 1.0.0 or later.",
+    details: [
+      "To unlock it you need Historian 25 and Farming 25. Then find the Annotated Hymnal in Bramblemead Valley and read it. Below Historian 25 you can't make out the older writing between the hymns.",
+      "Aim at a plant and press G to take a cutting, then press G on a crop, sapling or tree you planted to graft it. At dawn the graft either takes or it doesn't. A graft that takes changes how the plant looks, and the first of each pairing goes in your Discovery Catalogue.",
+      "There are five named hybrids, like Tuberwood Ash (potatoes from an ash tree) and Weeping Oak, plus a lot of other pairings, each with its own look. A crop growing on a tree can be picked once a day.",
+      "Very rarely, a cabbage grafted onto a cabbage grows a Brassica Primelet instead. Look after it for five days and it turns into a Mini Brassica Prime, with its own name, a personality and opinions on your cooking. Raise as many as you like.",
+      "Hold Z on a plant to use the Action Wheel from ESL:DragonWilds, or just stick to the keys.",
+    ],
+    screenshots: [
+      { src: "/images/mods/screens/horticulture-mini-primes.jpg", alt: "Six potted Mini Brassica Primes in a row" },
+      { src: "/images/mods/screens/horticulture-hymnal.jpg", alt: "The Annotated Hymnal on the grass with its Historian 25 prompt" },
+      { src: "/images/mods/screens/horticulture-level-up.jpg", alt: "The game's level-up banner with the Horticulture badge" },
+    ],
+  },
 ];
 
 export const gameLabels: Record<GameId, string> = {
   minecraft: "Minecraft",
+  dragonwilds: "RuneScape: Dragonwilds",
 };
 
 /** Add a new GameId + label here when we ship mods for another game. */
-export const gameOrder: GameId[] = ["minecraft"];
+export const gameOrder: GameId[] = ["minecraft", "dragonwilds"];
+
+export const gameNotes: Partial<Record<GameId, string>> = {
+  dragonwilds:
+    "Fan-made mods. Not affiliated with, endorsed by or sponsored by Jagex Ltd. RuneScape and RuneScape: Dragonwilds are trademarks of Jagex Ltd.",
+};
 
 export const ecosystemLabels: Record<Ecosystem, string> = {
   ess: "Extra Special stack",
   pantheon: "Pantheon",
   "dead-air": "Dead Air",
   other: "Standalone & utility",
+  ashenfall: "Skills of Ashenfall",
 };
 
 export function modGame(mod: Mod): GameId {

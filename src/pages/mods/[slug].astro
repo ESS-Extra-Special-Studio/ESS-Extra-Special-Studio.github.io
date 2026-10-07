@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
-import { mods, getMod } from "../../data/mods";
+import { mods, getMod, gameLabels, gameNotes, modGame } from "../../data/mods";
 
 export function getStaticPaths() {
   return mods.map((mod) => ({ params: { slug: mod.id } }));
@@ -12,6 +12,7 @@ const mod = getMod(slug!);
 if (!mod) {
   throw new Error("Unknown mod");
 }
+const game = modGame(mod);
 ---
 
 <BaseLayout title={mod.name} description={mod.short} path={`/mods/${mod.id}`}>
@@ -51,8 +52,40 @@ if (!mod) {
       <p>
         {mod.loaders.join(", ")}
         {mod.mcVersions.length ? ` · Minecraft ${mod.mcVersions.join(", ")}` : ""}
+        {game !== "minecraft" ? ` · ${gameLabels[game]}` : ""}
       </p>
     )
   }
   <ExternalLinks links={mod.links} />
+  {mod.details?.map((text) => <p>{text}</p>)}
+  {
+    mod.screenshots && mod.screenshots.length > 0 && (
+      <div class="grid screenshots">
+        {mod.screenshots.map((shot) => (
+          <a href={shot.src}>
+            <img src={shot.src} alt={shot.alt} width="1600" height="842" loading="lazy" />
+          </a>
+        ))}
+      </div>
+    )
+  }
+  {gameNotes[game] && <p class="game-note">{gameNotes[game]}</p>}
 </BaseLayout>
+
+<style>
+  .screenshots {
+    margin: 1.5rem 0;
+  }
+  .screenshots img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+  }
+  .game-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
