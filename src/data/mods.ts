@@ -27,14 +27,10 @@ export type Mod = {
   screenshots?: { src: string; alt: string }[];
 };
 
-/**
- * TODO: CurseForge URLs for the Dragonwilds mods. The project pages were not public yet when these mods were added.
- * Paste each real URL here once confirmed. Empty values are not shown on the site.
- */
 const dragonwildsCurseForge = {
-  "esl-dragonwilds": "",
-  historian: "",
-  horticulture: "",
+  "esl-dragonwilds": "https://www.curseforge.com/runescape-dragonwilds/ue4ss-mods/esl-dragonwilds",
+  historian: "https://www.curseforge.com/runescape-dragonwilds/ue4ss-mods/skills-of-ashenfall-historian",
+  horticulture: "https://www.curseforge.com/runescape-dragonwilds/ue4ss-mods/skills-of-ashenfall-horticulture",
 };
 
 export const mods: Mod[] = [
@@ -436,7 +432,10 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: [],
     loaders: ["UE4SS"],
-    links: { curseforge: dragonwildsCurseForge["esl-dragonwilds"] },
+    links: {
+      github: "https://github.com/ESS-Extra-Special-Studio/ESL-DragonWilds",
+      curseforge: dragonwildsCurseForge["esl-dragonwilds"],
+    },
     icon: "/images/mods/esl-dragonwilds.png",
     stackNote: "Needs UE4SS 3.0.1 for Dragonwilds. Not the same mod as ESL for Minecraft.",
     details: [
@@ -483,7 +482,10 @@ export const mods: Mod[] = [
     status: "shipped",
     mcVersions: [],
     loaders: ["UE4SS"],
-    links: { curseforge: dragonwildsCurseForge.horticulture },
+    links: {
+      github: "https://github.com/ESS-Extra-Special-Studio/Skills-of-Ashenfall-Horticulture",
+      curseforge: dragonwildsCurseForge.horticulture,
+    },
     icon: "/images/mods/horticulture.png",
     stackNote: "Needs UE4SS 3.0.1 for Dragonwilds, ESL:DragonWilds 1.0.0 and Skills of Ashenfall: Historian 1.0.0 or later.",
     details: [
