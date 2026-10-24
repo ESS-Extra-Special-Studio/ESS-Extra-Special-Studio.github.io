@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-air-3.0.0",
+    date: "2026-10-24",
+    title: "Dead Air 3.0.0",
+    body: "Forge 1.20.1 and NeoForge 1.21.1. The Listener, Signal Breaker, Emergency Broadcasts, survivors with party HUD, and camp décor. Soundtrack expansion packs work on dedicated servers. Needs ESL 1.2.0+, ESC 2.1.0+, and RadioTowers 1.3.0+. Trailer: https://youtu.be/a8XrjZXm2S0",
+    href: "/mods/dead-air",
+  },
+  {
     id: "dead-air-fm-neoforge-2026-10-24",
     date: "2026-10-24",
     title: "Dead Air stations on NeoForge 1.21.1",
