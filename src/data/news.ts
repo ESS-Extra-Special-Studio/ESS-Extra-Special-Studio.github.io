@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-air-fm-neoforge-2026-10-24",
+    date: "2026-10-24",
+    title: "Dead Air stations on NeoForge 1.21.1",
+    body: "After Hours FM, Block Beats FM, Broken Youth Radio, Frontline FM, Iron Rain FM, and Wayfarer Radio 1.1.1, plus Zero Gravity 1.0.1, are on CurseForge for NeoForge 1.21.1. Dead Air stays optional. Pip-Boy Radio Conversion is not in this upload.",
+    href: "/mods/after-hours-fm",
+  },
+  {
     id: "esl-esc-radiotowers-2026-10-24",
     date: "2026-10-24",
     title: "ESL 1.2.0, ESC 2.1.0, Radio Towers 1.3.0",
