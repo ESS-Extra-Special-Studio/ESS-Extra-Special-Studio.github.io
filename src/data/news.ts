@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "esl-esc-radiotowers-2026-10-24",
+    date: "2026-10-24",
+    title: "ESL 1.2.0, ESC 2.1.0, Radio Towers 1.3.0",
+    body: "Forge 1.20.1 and NeoForge 1.21.1. ESL 1.2.0 can keep a site chunk loaded. ESC 2.1.0 adds a hold-to-aim action wheel other mods can register. Radio Towers 1.3.0 adds Boss Mode and Endless Mode tabs on Call Airdrop, locked until Dead Air reports Listener progress, and grounded wrecks sit nose-down.",
+    href: "/mods/esl",
+  },
+  {
     id: "skills-of-ashenfall-1.0.0",
     date: "2026-10-07",
     title: "Skills of Ashenfall for Dragonwilds",
