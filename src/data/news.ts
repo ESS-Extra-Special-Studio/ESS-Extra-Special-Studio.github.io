@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-letters-1.1.0",
+    date: "2026-10-25",
+    title: "Dead Letters 1.1.0",
+    body: "Forge 1.20.1 and NeoForge 1.21.1. Compatible with AzureLib 3.2.0. Still needs Extra Special Core, Lootr, and Lootr Liaison 1.3+.",
+    href: "/mods/dead-letters",
+  },
+  {
     id: "dead-air-3.0.0",
     date: "2026-10-24",
     title: "Dead Air 3.0.0",
