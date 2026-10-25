@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "lootr-liaison-1.3.0-ports",
+    date: "2026-10-25",
+    title: "Lootr Liaison 1.3.0 on more loaders",
+    body: "Where Lootr ships, Lootr Liaison 1.3.0 now does too: Forge 1.19.2, plus NeoForge 1.20.4, 1.21.4, 1.21.10, 1.21.11, 26.1, 26.2, and 26.3 (alongside the existing Forge 1.20.1 and NeoForge 1.21.1 builds). Still needs Lootr; Artifacts stays optional.",
+    href: "/mods/lootr-liaison",
+  },
+  {
     id: "dead-letters-1.1.0",
     date: "2026-10-25",
     title: "Dead Letters 1.1.0",
