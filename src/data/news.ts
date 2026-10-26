@@ -8,10 +8,24 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "da-rt-3.0.1-1.3.1",
+    date: "2026-10-26",
+    title: "Dead Air 3.0.1 and Radio Towers 1.3.1",
+    body: "Forge 1.20.1 and NeoForge 1.21.1. Dead Air 3.0.1 drops the unused Simple Voice Chat soft-dep and ships with Radio Towers 1.3.1. Radio Towers 1.3.1 fixes NeoForge loading (lobby listeners subscribe to concrete ESL lobby events). Also: Lootr Liaison 1.3.0 Forge 1.18.2 / 1.19.2 jars reuploaded with correct Lootr / Artifacts ranges, and WhatLIB? 1.0.1 is now on Forge 1.16.5.",
+    href: "/mods/dead-air",
+  },
+  {
+    id: "whatlib-1.0.1-ports",
+    date: "2026-10-25",
+    title: "WhatLIB? 1.0.1 ports",
+    body: "WhatLIB? 1.0.1 across the ESS loader matrix, including Forge 1.16.5. Live on CurseForge for Forge 1.16.5 / 1.18.2 / 1.19.2 / 1.20.1 / 1.20.4 and NeoForge 1.20.6 / 1.21.1 / 1.21.4 / 1.21.10 / 1.21.11 / 26.1 / 26.2 / 26.3. Needs ESL + ESC; ESH optional for F9 → UTILITY.",
+    href: "/mods/whatlib",
+  },
+  {
     id: "lootr-liaison-1.3.0-ports",
     date: "2026-10-25",
-    title: "Lootr Liaison 1.3.0 on more loaders",
-    body: "Where Lootr ships, Lootr Liaison 1.3.0 now does too: Forge 1.19.2, plus NeoForge 1.20.4, 1.21.4, 1.21.10, 1.21.11, 26.1, 26.2, and 26.3 (alongside the existing Forge 1.20.1 and NeoForge 1.21.1 builds). Still needs Lootr; Artifacts stays optional.",
+    title: "Lootr Liaison 1.3.0 ports",
+    body: "Lootr Liaison 1.3.0 ports where Lootr ships. Live on CurseForge across the matrix, including corrected Forge 1.18.2 and 1.19.2 jars (Lootr / Artifacts version ranges match those Minecraft lines). Still needs Lootr; Artifacts stays optional for the mimic gate.",
     href: "/mods/lootr-liaison",
   },
   {
