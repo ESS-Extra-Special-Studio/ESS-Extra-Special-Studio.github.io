@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-air-3.0.2",
+    date: "2026-11-09",
+    title: "Dead Air 3.0.2",
+    body: "Forge 1.20.1 and NeoForge 1.21.1. Fixes a NeoForge client crash on launch from a duplicate Open Radio Tuner key binding. The tuner key id now matches Forge (tune_radio).",
+    href: "/mods/dead-air",
+  },
+  {
     id: "radio-towers-1.3.2",
     date: "2026-11-09",
     title: "Radio Towers 1.3.2",
