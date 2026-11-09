@@ -177,7 +177,7 @@ export const mods: Mod[] = [
     id: "radio-towers",
     name: "Radio Towers",
     short: "Companion world content for Dead Air. Not an Extra Special Studio mod.",
-    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. Optional airdrop lobby (invite, ready, then Go) uses ESL sessions and ESN packets; solo lever calls stay as they were. Call Airdrop adds Boss Mode and Endless Mode tabs, locked until Dead Air reports Listener progress, and grounded wrecks sit nose-down. NeoForge 1.3.1 fixes lobby event registration so the mod loads again. It is a companion, not an Extra Special Studio mod.",
+    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. Optional airdrop lobby (invite, ready, then Go) uses ESL sessions and ESN packets; solo lever calls stay as they were. Call Airdrop adds Boss Mode and Endless Mode tabs, locked until Dead Air reports Listener progress, and grounded wrecks sit nose-down. 1.3.2 stops hard trash landings from applying Jump Boost 128 and makes trash feel sticky instead of bouncy. It is a companion, not an Extra Special Studio mod.",
     ecosystem: "dead-air",
     status: "companion",
     mcVersions: ["1.20.1", "1.21.1"],

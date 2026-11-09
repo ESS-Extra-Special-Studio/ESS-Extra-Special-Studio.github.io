@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "radio-towers-1.3.2",
+    date: "2026-11-09",
+    title: "Radio Towers 1.3.2",
+    body: "Full loader matrix. Hard landings in trash no longer apply Jump Boost 128 (that launched players on the next jump), and the trash jump factor is lower so the block feels sticky. NeoForge ports that were still on 1.3.0 also pick up the concrete ESL lobby listener fix.",
+    href: "/mods/radio-towers",
+  },
+  {
     id: "da-rt-3.0.1-1.3.1",
     date: "2026-10-26",
     title: "Dead Air 3.0.1 and Radio Towers 1.3.1",
