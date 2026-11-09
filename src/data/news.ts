@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-air-fm-pipboy-ports-2026-11-09",
+    date: "2026-11-09",
+    title: "Dead Air stations + Pip-Boy on 1.20.4 / 1.20.6",
+    body: "After Hours, Block Beats, Broken Youth, Frontline, Iron Rain, Wayfarer (1.1.1), Zero Gravity (1.0.1), and Pip-Boy Radio Conversion (1.0.1) now ship Forge 1.20.4 and NeoForge 1.20.6 ports alongside the existing Forge 1.20.1 / NeoForge 1.21.1 primaries. Soundtrack pack CurseForge licenses are All Rights Reserved. Dead Air stays optional on the music packs.",
+    href: "/mods/after-hours-fm",
+  },
+  {
     id: "dead-air-3.0.2-ports",
     date: "2026-11-09",
     title: "Dead Air 3.0.2 near-modern ports",
