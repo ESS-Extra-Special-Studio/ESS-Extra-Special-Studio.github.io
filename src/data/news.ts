@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "dead-air-3.0.2-ports",
+    date: "2026-11-09",
+    title: "Dead Air 3.0.2 near-modern ports",
+    body: "Forge 1.20.4 and NeoForge 1.20.6 now ship full 3.0.2 parity (Listener, Emergency Broadcasts, survivors, ESC action wheel). Primaries remain Forge 1.20.1 and NeoForge 1.21.1. Intentionally skipped this wave: older Forge lines (1.16.5 / 1.18.2 / 1.19.2) and NeoForge 1.21.4+ / 26.x until RadioTowers registry work lands.",
+    href: "/mods/dead-air",
+  },
+  {
     id: "dead-air-3.0.2",
     date: "2026-11-09",
     title: "Dead Air 3.0.2",
