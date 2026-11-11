@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "radio-towers-1.3.3",
+    date: "2026-11-11",
+    title: "Radio Towers 1.3.3",
+    body: "Full loader matrix. Trash no longer traps you when you try to jump out (still sticky; the old launch-pad Jump Boost is gone). CurseForge description rewritten with a config how-to for wave length and Call Airdrop shop blacklist/prices in radiotowers-common.toml. Declared deps cleaned up — ESL/ESC/ESN required; Dead Air and TaCZ optional.",
+    href: "/mods/radio-towers",
+  },
+  {
     id: "dead-air-fm-pipboy-ports-2026-11-09",
     date: "2026-11-09",
     title: "Dead Air stations + Pip-Boy on 1.20.4 / 1.20.6",
