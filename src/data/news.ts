@@ -8,6 +8,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: "radio-towers-1.3.4",
+    date: "2026-11-14",
+    title: "Radio Towers 1.3.4",
+    body: "Hotfix for a broken mods.toml left behind when Berezka deps were removed in 1.3.3 — that stopped packs loading with a corrupt-toml error. Full loader matrix. Skip 1.3.3 if you already downloaded it.",
+    href: "/mods/radio-towers",
+  },
+  {
     id: "radio-towers-1.3.3",
     date: "2026-11-11",
     title: "Radio Towers 1.3.3",

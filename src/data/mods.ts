@@ -177,7 +177,7 @@ export const mods: Mod[] = [
     id: "radio-towers",
     name: "Radio Towers",
     short: "Companion world content for Dead Air. Not an Extra Special Studio mod.",
-    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. Optional airdrop lobby (invite, ready, then Go) uses ESL sessions and ESN packets; solo lever calls stay as they were. Call Airdrop adds Boss Mode and Endless Mode tabs, locked until Dead Air reports Listener progress, and grounded wrecks sit nose-down. 1.3.3 lets you jump out of trash (still sticky; no Jump Boost launch), documents wave length and shop blacklist/prices in radiotowers-common.toml, and declares ESL/ESC/ESN required with Dead Air and TaCZ optional. It is a companion, not an Extra Special Studio mod.",
+    long: "Radio Towers supplies towers, airdrops, and related world pieces Dead Air talks to. Optional airdrop lobby (invite, ready, then Go) uses ESL sessions and ESN packets; solo lever calls stay as they were. Call Airdrop adds Boss Mode and Endless Mode tabs, locked until Dead Air reports Listener progress, and grounded wrecks sit nose-down. 1.3.4 fixes a corrupt mods.toml from the 1.3.3 Berezka dep cleanup that blocked pack loading. 1.3.3 added trash jump-out, config how-to docs, and ESL/ESC/ESN required with Dead Air and TaCZ optional. It is a companion, not an Extra Special Studio mod.",
     ecosystem: "dead-air",
     status: "companion",
     mcVersions: ["1.20.1", "1.21.1"],
